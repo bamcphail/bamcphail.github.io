@@ -61,11 +61,27 @@
       text-decoration: none;
     }
 
-    .tagline {
-      font-size: 16px;
-      color: #888;
-      font-style: italic;
+    .nav {
+      display: flex;
+      gap: 24px;
       line-height: 32px;
+    }
+
+    .nav a {
+      font-size: 16px;
+      font-style: italic;
+      color: #aaa;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav a.active {
+      color: #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .nav a:hover {
+      color: #1a1a1a;
     }
 
     .divider {
@@ -74,8 +90,7 @@
       margin: 16px 0;
     }
 
-    .spacer { height: 32px; }
-
+    /* Essays view */
     table {
       border-collapse: collapse;
       width: 100%;
@@ -106,22 +121,73 @@
     td.title a:hover {
       text-decoration: underline;
     }
+
+    /* About view */
+    .about-body {
+      display: none;
+    }
+
+    .about-body p {
+      font-size: 19px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .about-body .contact {
+      font-size: 17px;
+      color: #444;
+      line-height: 32px;
+    }
+
+    .about-body .contact a {
+      color: #444;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+    }
+
+    .about-body .contact a:hover {
+      color: #1a1a1a;
+      border-bottom-color: #1a1a1a;
+    }
   </style>
 </head>
 <body>
   <div class="pad">
     <div class="page">
       <h1><a href="index.html">Bryce McPhail's Blog</a></h1>
-      <div class="tagline">Essays</div>
+      <div class="nav">
+        <a id="tab-essays" class="active" onclick="show('essays')">Essays</a>
+        <a id="tab-about" onclick="show('about')">About Me</a>
+      </div>
       <hr class="divider">
-      <table>
-        <tr>
-          <td class="date">Mar 2026</td>
-          <td class="title"><a href="thoughts-on-the-future-of-product-management.html">Thoughts on the Future of Product Management</a></td>
-        </tr>
-        <!-- Add new articles above this line -->
-      </table>
+
+      <!-- Essays -->
+      <div id="view-essays">
+        <table>
+          <tr>
+            <td class="date">Mar 2026</td>
+            <td class="title"><a href="thoughts-on-the-future-of-product-management.html">Thoughts on the Future of Product Management</a></td>
+          </tr>
+          <!-- Add new articles above this line -->
+        </table>
+      </div>
+
+      <!-- About -->
+      <div id="view-about" class="about-body">
+        <p>Bryce McPhail is a product leader with experience building and scaling products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare.</p>
+        <div class="contact">Email &mdash; <a href="mailto:mcphail.career@gmail.com">mcphail.career@gmail.com</a></div>
+      </div>
     </div>
   </div>
+
+  <script>
+    function show(tab) {
+      document.getElementById('view-essays').style.display = tab === 'essays' ? 'block' : 'none';
+      document.getElementById('view-about').style.display = tab === 'about' ? 'block' : 'none';
+      document.getElementById('tab-essays').className = tab === 'essays' ? 'active' : '';
+      document.getElementById('tab-about').className = tab === 'about' ? 'active' : '';
+    }
+  </script>
 </body>
 </html>
