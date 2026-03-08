@@ -90,7 +90,6 @@
       margin: 16px 0;
     }
 
-    /* Essays view */
     table {
       border-collapse: collapse;
       width: 100%;
@@ -122,7 +121,6 @@
       text-decoration: underline;
     }
 
-    /* About view */
     .about-body {
       display: none;
     }
@@ -157,13 +155,13 @@
     <div class="page">
       <h1><a href="index.html">Bryce McPhail's Blog</a></h1>
       <div class="nav">
-        <a id="tab-essays" class="active" onclick="show('essays')">Essays</a>
+        <a id="tab-blogs" class="active" onclick="show('blogs')">Blogs</a>
         <a id="tab-about" onclick="show('about')">About Me</a>
       </div>
       <hr class="divider">
 
-      <!-- Essays -->
-      <div id="view-essays">
+      <!-- Blogs -->
+      <div id="view-blogs">
         <table>
           <tr>
             <td class="date">Mar 2026</td>
@@ -183,9 +181,9 @@
 
   <script>
     function show(tab) {
-      document.getElementById('view-essays').style.display = tab === 'essays' ? 'block' : 'none';
+      document.getElementById('view-blogs').style.display = tab === 'blogs' ? 'block' : 'none';
       document.getElementById('view-about').style.display = tab === 'about' ? 'block' : 'none';
-      document.getElementById('tab-essays').className = tab === 'essays' ? 'active' : '';
+      document.getElementById('tab-blogs').className = tab === 'blogs' ? 'active' : '';
       document.getElementById('tab-about').className = tab === 'about' ? 'active' : '';
     }
   </script>
