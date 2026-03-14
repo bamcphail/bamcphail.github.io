@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background: #c8c4b0;
       min-height: 100vh;
@@ -17,7 +16,6 @@
       padding: 48px 20px;
       font-family: 'Cormorant Garamond', Georgia, serif;
     }
-
     .pad {
       width: 600px;
       background: #fdf9e3;
@@ -31,7 +29,6 @@
         2px 6px 8px rgba(0,0,0,0.15);
       border-top: 4px solid #e8c84a;
     }
-
     .page {
       padding: 36px 44px 48px 72px;
       background-image:
@@ -47,107 +44,23 @@
       line-height: 32px;
       min-height: 500px;
     }
-
-    h1 {
-      font-size: 30px;
-      font-weight: 500;
-      color: #1a1a1a;
-      line-height: 32px;
-      letter-spacing: -0.3px;
-    }
-
-    h1 a {
-      color: #1a1a1a;
-      text-decoration: none;
-    }
-
-    .nav {
-      display: flex;
-      gap: 24px;
-      line-height: 32px;
-    }
-
-    .nav a {
-      font-size: 18px;
-      font-style: italic;
-      color: #aaa;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .nav a.active {
-      color: #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .nav a:hover {
-      color: #1a1a1a;
-    }
-
-    .divider {
-      border: none;
-      border-top: 1px solid #b8b090;
-      margin: 16px 0;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    td {
-      padding: 0;
-      vertical-align: top;
-      line-height: 32px;
-      height: 32px;
-    }
-
-    td.date {
-      color: #aaa;
-      font-size: 17px;
-      white-space: nowrap;
-      padding-right: 24px;
-      width: 90px;
-      font-style: italic;
-    }
-
-    td.title a {
-      color: #1a1a1a;
-      text-decoration: none;
-      font-size: 22px;
-    }
-
-    td.title a:hover {
-      text-decoration: underline;
-    }
-
-    .about-body {
-      display: none;
-    }
-
-    .about-body p {
-      font-size: 21px;
-      color: #222;
-      line-height: 32px;
-      margin: 0 0 32px 0;
-    }
-
-    .about-body .contact {
-      font-size: 19px;
-      color: #444;
-      line-height: 32px;
-    }
-
-    .about-body .contact a {
-      color: #444;
-      text-decoration: none;
-      border-bottom: 1px solid #aaa;
-    }
-
-    .about-body .contact a:hover {
-      color: #1a1a1a;
-      border-bottom-color: #1a1a1a;
-    }
+    h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; line-height: 32px; letter-spacing: -0.3px; }
+    h1 a { color: #1a1a1a; text-decoration: none; }
+    .nav { display: flex; gap: 24px; line-height: 32px; }
+    .nav a { font-size: 18px; font-style: italic; color: #aaa; text-decoration: none; cursor: pointer; }
+    .nav a.active { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; }
+    .nav a:hover { color: #1a1a1a; }
+    .divider { border: none; border-top: 1px solid #b8b090; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; }
+    td { padding: 0; vertical-align: top; line-height: 32px; height: 32px; }
+    td.date { color: #aaa; font-size: 17px; white-space: nowrap; padding-right: 24px; width: 90px; font-style: italic; }
+    td.title a { color: #1a1a1a; text-decoration: none; font-size: 22px; }
+    td.title a:hover { text-decoration: underline; }
+    .about-body { display: none; }
+    .about-body p { font-size: 21px; color: #222; line-height: 32px; margin: 0 0 32px 0; }
+    .about-body .contact { font-size: 19px; color: #444; line-height: 32px; }
+    .about-body .contact a { color: #444; text-decoration: none; border-bottom: 1px solid #aaa; }
+    .about-body .contact a:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
   </style>
 </head>
 <body>
@@ -159,18 +72,16 @@
         <a id="tab-about" onclick="show('about')">About Me</a>
       </div>
       <hr class="divider">
-
       <!-- Blogs -->
       <div id="view-blogs">
         <table>
           <tr>
             <td class="date">Mar 2026</td>
-            <td class="title"><a href="thoughts-on-the-future-of-product-management.html">Thoughts on the Future of Product Management</a></td>
+            <td class="title"><a href="signal-is-the-bottleneck.html">Signal is the Bottleneck</a></td>
           </tr>
           <!-- Add new articles above this line -->
         </table>
       </div>
-
       <!-- About -->
       <div id="view-about" class="about-body">
         <p>Bryce McPhail is a product leader with experience building and scaling products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare.</p>
@@ -178,7 +89,6 @@
       </div>
     </div>
   </div>
-
   <script>
     function show(tab) {
       document.getElementById('view-blogs').style.display = tab === 'blogs' ? 'block' : 'none';
