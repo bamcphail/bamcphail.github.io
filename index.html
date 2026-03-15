@@ -17,7 +17,7 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
     }
     .pad {
-      width: 600px;
+      width: min(900px, 90vw);
       background: #fdf9e3;
       box-shadow:
         0 2px 0 #e8c84a,
@@ -44,6 +44,14 @@
       line-height: 32px;
       min-height: 500px;
     }
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdf9e3;
+      margin: -36px -44px 0 -72px;
+      padding: 36px 44px 0 72px;
+    }
     h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; line-height: 32px; letter-spacing: -0.3px; }
     h1 a { color: #1a1a1a; text-decoration: none; }
     .nav { display: flex; gap: 24px; line-height: 32px; }
@@ -66,13 +74,14 @@
 <body>
   <div class="pad">
     <div class="page">
-      <h1><a href="index.html">Bryce McPhail's Blog</a></h1>
-      <div class="nav">
-        <a id="tab-blogs" class="active" onclick="show('blogs')">Blogs</a>
-        <a id="tab-about" onclick="show('about')">About Me</a>
+      <div class="sticky-header">
+        <h1><a href="index.html">Bryce McPhail's Blog</a></h1>
+        <div class="nav">
+          <a id="tab-blogs" class="active" onclick="show('blogs')">Blogs</a>
+          <a id="tab-about" onclick="show('about')">About Me</a>
+        </div>
+        <hr class="divider">
       </div>
-      <hr class="divider">
-      <!-- Blogs -->
       <div id="view-blogs">
         <table>
           <tr>
@@ -82,7 +91,6 @@
           <!-- Add new articles above this line -->
         </table>
       </div>
-      <!-- About -->
       <div id="view-about" class="about-body">
         <p>Bryce McPhail is a product leader with experience building and scaling products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare.</p>
         <div class="contact">Email &mdash; <a href="mailto:mcphail.career@gmail.com">mcphail.career@gmail.com</a></div>
