@@ -19,7 +19,7 @@
     }
 
     .pad {
-      width: 600px;
+      width: min(900px, 90vw);
       background: #fdf9e3;
       box-shadow:
         0 2px 0 #e8c84a,
@@ -94,15 +94,26 @@
       line-height: 32px;
       margin: 0 0 32px 0;
     }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdf9e3;
+      margin: -36px -44px 0 -72px;
+      padding: 36px 44px 0 72px;
+    }
   </style>
 </head>
 <body>
   <div class="pad">
     <div class="page">
-      <div class="post-title">Signal is the Bottleneck</div>
-      <div class="post-subtitle">Welcome to the Special Missions Unit Era of Product Development</div>
-      <div class="post-meta">March 2026 &nbsp;|&nbsp; <a href="index.html">&larr; All blogs</a></div>
-      <div class="spacer"></div>
+      <div class="sticky-header">
+        <div class="post-title">Signal is the Bottleneck</div>
+        <div class="post-subtitle">Welcome to the Special Missions Unit Era of Product Development</div>
+        <div class="post-meta">March 2026 &nbsp;|&nbsp; <a href="index.html">&larr; All blogs</a></div>
+        <div class="spacer"></div>
+      </div>
       <div class="post-body">
 
         <p>Product management has fundamentally changed.</p>
