@@ -123,6 +123,18 @@
       line-height: 32px;
     }
   </style>
+  <script>
+  window.addEventListener('load', function() {
+    var page = document.querySelector('.page');
+    if (!page) return;
+    var pageTop = page.getBoundingClientRect().top;
+    document.querySelectorAll('.screenshot-caption').forEach(function(cap) {
+      cap.style.marginBottom = '32px';
+      var rem = Math.round(cap.getBoundingClientRect().bottom - pageTop) % 32;
+      if (rem !== 0) cap.style.marginBottom = (64 - rem) + 'px';
+    });
+  });
+  </script>
 </head>
 <body>
   <div class="pad">
