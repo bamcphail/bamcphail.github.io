@@ -357,7 +357,7 @@
     xhr.open('POST', ENDPOINT);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onload = function() { localStorage.setItem(KEY, '1'); hideGate(); };
+    xhr.onload = function() { posthog.identify(email, { email: email }); localStorage.setItem(KEY, '1'); hideGate(); };
     xhr.onerror = function() { localStorage.setItem(KEY, '1'); hideGate(); };
     xhr.send(JSON.stringify({ email: email, page: window.location.pathname }));
   });
