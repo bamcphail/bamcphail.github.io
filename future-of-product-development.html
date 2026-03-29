@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What I Think I Think About the Future of Product Development — Bryce McPhail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #c8c4b0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 20px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .pad {
+      width: min(900px, 90vw);
+      background: #fdf9e3;
+      box-shadow:
+        0 2px 0 #e8c84a,
+        0 4px 0 #fdf9e3,
+        0 6px 0 #e8c84a,
+        0 8px 0 #fdf9e3,
+        0 10px 0 #e8c84a,
+        4px 14px 24px rgba(0,0,0,0.25),
+        2px 6px 8px rgba(0,0,0,0.15);
+      border-top: 4px solid #e8c84a;
+    }
+
+    .page {
+      padding: 36px 44px 48px 72px;
+      background-image:
+        linear-gradient(to right, transparent 46px, #e8a0a0 46px, #e8a0a0 47.5px, transparent 47.5px),
+        repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 31px,
+          #d4cfa0 31px,
+          #d4cfa0 32px
+        );
+      background-color: #fdf9e3;
+      line-height: 32px;
+      min-height: 500px;
+    }
+
+    .post-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+    }
+
+    .post-subtitle {
+      font-size: 19px;
+      font-style: italic;
+      color: #555;
+      line-height: 32px;
+    }
+
+    .post-meta {
+      font-size: 17px;
+      color: #aaa;
+      font-style: italic;
+      line-height: 32px;
+    }
+
+    .post-meta a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    .post-meta a:hover {
+      text-decoration: underline;
+    }
+
+    .spacer { height: 32px; }
+
+    .post-body p {
+      font-size: 21px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .post-body h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .post-body blockquote {
+      font-size: 21px;
+      font-style: italic;
+      color: #444;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+      padding-left: 24px;
+      border-left: 2px solid #d4cfa0;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdf9e3;
+      margin: -36px -44px 0 -72px;
+      padding: 36px 44px 0 72px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pad">
+    <div class="page">
+      <div class="sticky-header">
+        <div class="post-title">What I Think I Think About the Future of Product Development</div>
+        <div class="post-meta">March 2026 &nbsp;|&nbsp; <a href="index.html">&larr; All blogs</a></div>
+        <div class="spacer"></div>
+      </div>
+      <div class="post-body">
+
+        <p>The limiting factor in product development used to be engineering capacity. Roadmaps, specs, and long decision cycles existed because we could not build fast enough, so we had to be precise about what we chose to build. That constraint is collapsing. The barrier to building software is falling rapidly, and the bottleneck has shifted away from engineering and toward ingestion and go-to-market. The question is no longer how fast can we build — it is how fast can we generate signal from the market that is worth acting on.</p>
+
+        <p>This shift is driving a set of changes that I think are still underappreciated. Let me try to make them concrete.</p>
+
+        <h2>The Navy and the Special Missions Unit</h2>
+
+        <p>The traditional product development process resembles a big blue navy. It takes years to design the ship, years to build the ship, years to test the ship, and years to train the crew to operate it. The system is powerful. It is robust and thorough and exacting. But it is not agile, and it is not fast, and increasingly it is not what the best product organizations look like.</p>
+
+        <p>The future looks more like a special missions unit. Think Development Group or SEAL Team Six. Think Combat Applications Group or Delta Force. Think the 160th SOAR, the Night Stalkers. These are units whose job is to be ready within hours, get on a plane, go anywhere in the world, and execute a surgical mission. Small teams, fast timelines, precise outcomes, and very clear reasoning behind all of it.</p>
+
+        <p>To be clear: business and warfare are not the same. The stakes in actual combat are incomparably higher. But the structural analogy holds. The organizations that win in this era will operate less like the big blue navy and more like special missions units — generating intelligence from the market, deploying small teams against specific problems, executing quickly and precisely, debriefing, and moving to the next mission.</p>
+
+        <p>That shift changes the role of the spec, the role of the PM, the shape of the roadmap, and the relationship between product and engineering. Let me take each in turn.</p>
+
+        <h2>Specs Are Shrinking</h2>
+
+        <p>When building is cheap, precision in planning becomes less valuable than speed of validation. A one-pager is now enough: who is the user, what problem are we solving, and what does winning look like. The prototype now shows the "what." The spec explains the "why." A short Loom ties them together before execution begins. That is the new handoff artifact, and it is orders of magnitude lighter than what preceded it.</p>
+
+        <p>I built a workflow I call Product TeamRoom to operationalize this. One of its core features generates what I call a mini spec — it takes a rough draft, a set of meeting notes, or even just a few sentences, and produces a structured output: who is the user, what role do they play, what team are they on, what job are they trying to accomplish, and why it matters. Customer signals from previous conversations are injected automatically. Gaps are filled with structured placeholders.</p>
+
+        <p>Not a multiple-page legal document. Just enough to tell the story and move.</p>
+
+        <h2>Signal Verification Can Now Happen in Real Time</h2>
+
+        <p>This is not theoretical. Let me give you the specific story that changed how I think about this.</p>
+
+        <p>During an embedded visit with a large, globally known financial institution, we were discussing the current regulatory environment around digital assets. During the conversation, a user asked a question about how something worked in our product. The account director answered it well. But something about the question stuck with me.</p>
+
+        <p>It revealed that the user was trying to accomplish a specific job, and our product could get them close to that outcome, but it did not give them a perfect path to get there.</p>
+
+        <p>So I did something different. I took the notes I was already writing and dropped them into Product TeamRoom. It generated a mini spec in seconds. I took that spec and dropped it into a prototype generator. Within minutes I had a fully clickable prototype.</p>
+
+        <p>I turned my laptop around when there was a gap in the conversation and said: I think this is what you were talking about. Does this look like what you would need to accomplish your goal?</p>
+
+        <p>The user could click it. Explore it. Interact with it. The response was immediate.</p>
+
+        <p>"Yes. That is exactly what I was looking for."</p>
+
+        <p>Then they suggested one additional tweak. I updated the prototype. Within minutes we had something extremely close to the right solution that we would eventually deliver in production. That prototype went directly to engineering with a simple message: we have uncovered new signal. It is not noise. We need to prioritize building this next.</p>
+
+        <p>Engineering built the initial delivery in days. Not weeks. Not months.</p>
+
+        <p>The cycle from signal to validation collapsed into a single customer conversation. That is the world we are operating in.</p>
+
+        <h2>The PM Role Is Shifting From Writing to Listening</h2>
+
+        <p>The role of a product manager has always involved listening. That is not new. What is new is where the primary output lives. It used to live in the spec. Increasingly, it lives in the signal. The best PMs will build systems and relationships that continuously generate validated market intelligence at speed.</p>
+
+        <p>I approach this through three programs at TRM.</p>
+
+        <p>The first is a Client Feedback Group — an invite-only group of our most engaged clients, the leaders actually setting the course for digital asset programs at financial institutions. In each session we show what shipped, what is about to ship, and what we are thinking about next. Then we ask one question: <em>What did you expect to see on our roadmap that you did not see today?</em> That single question, asked to the right people in the right room, generates extraordinary signal. We convert it into mini specs, prototypes, and often new features within days or weeks. Attendees keep coming back not just because they feel heard, but because they see outcomes from what they share in every session.</p>
+
+        <p>The second is Embedded PM — forward-deployed product management. We go onsite to financial institutions and sit with the teams actually using our product. We watch how they work. We learn their workflows, not just the workflows we designed into the product. The output of this is not a feature request list. It is a level of understanding that changes how you build entirely. You stop building for "a compliance analyst at Bank X" and you start building for Sarah — the VP of global compliance, based in New York, responsible for North American investigations at Bank X, facing specific regulatory pressures, managing a specific team. When you understand your users at that level, product decisions become dramatically clearer. Clients who have gone through this process often say: "We do not see you as a vendor. We see you as a partner and an architect in our program." That kind of relationship is a prerequisite for signal that matters.</p>
+
+        <p>The third is FI Firesides — small sessions with users across each organization, from executives running digital asset programs to frontline analysts earlier in their careers using the product every day. The goal is empathy across every level, not just the executive suite.</p>
+
+        <p>Taken together, these three programs produce a continuous flow of validated market intelligence. The PM's job is to build and maintain the systems that make that flow possible.</p>
+
+        <h2>Feedback Loops Are Compressing From Quarters to Days</h2>
+
+        <p>The entire discipline of product management was built around the assumption of long feedback loops. You shipped something. You waited weeks or months for enough usage data to be meaningful. You ran a retrospective. You incorporated the learnings into the next planning cycle. Rinse and repeat on a quarterly cadence.</p>
+
+        <p>That cadence is dissolving. When you can build a clickable prototype in minutes and put it in front of a customer in the same conversation where the idea emerged, you are no longer waiting for post-launch data to tell you whether you were right. You are finding out before you build. The debrief happens before the sprint begins. This fundamentally changes how teams operate and learn.</p>
+
+        <p>It also raises the bar on what it means to be a PM. Faster feedback loops mean more opportunities to be wrong faster, which means the judgment required to interpret signal correctly becomes more valuable, not less. Speed does not replace discernment. It demands it.</p>
+
+        <h2>Institutional Knowledge Is Compounding</h2>
+
+        <p>There is a second-order effect that I think gets underappreciated in most conversations about AI in product development.</p>
+
+        <p>AI does not just help you build faster. It helps you remember better.</p>
+
+        <p>What used to be fragmented tribal knowledge — scattered across meeting notes, Slack threads, customer visit summaries, competitive analysis decks — is becoming a continuously improving system of record. And unlike the institutional knowledge of the past, which degraded every time someone left the company or a Confluence page went un-updated, this version compounds over time as AI ingests transcripts, customer visits, and internal threads, normalizes them, and makes them retrievable on demand.</p>
+
+        <p>In Product TeamRoom, every customer conversation, embedded visit, and competitive signal gets normalized and made searchable. When I was on the embedded visit I described earlier, most of the context I needed to generate the prototype was already in the system. I did not have to reconstruct it. I just had to add the notes from that specific conversation. The rest was already there. That is the version of AI leverage I think is most underrated. Not AI writing your specs. Not AI generating your code. AI making your institutional memory functional at speed.</p>
+
+        <p>And today's tools are the least capable they will ever be.</p>
+
+        <h2>Rigid Roadmaps Are Giving Way to Missions</h2>
+
+        <p>The era of the six, twelve, or twenty-four month roadmap is fading. Not because planning is bad, but because the speed of building has made rigid planning expensive in a new way. A roadmap locked six months in advance now carries the real cost of all the signal it cannot see.</p>
+
+        <p>What is replacing it is a mission model. Go-to-market identifies a problem. Product translates it into a clear job to be done with a defined outcome. A small team picks it up, builds, ships, and debriefs before moving to the next mission. The roadmap is replaced by a living backlog of validated signal that constantly reprioritizes itself. The work does not become less intentional in this model — if anything, it becomes more intentional, because every mission is anchored to a specific piece of validated signal rather than a planning cycle's best guess about what the market might want three quarters from now.</p>
+
+        <h2>The Product-Engineering Interface Is Getting Lighter</h2>
+
+        <p>Product brings validated signal and a prototype that the customer has often already reacted to. Engineering challenges scope, clarifies, builds quickly, and ships. There is less negotiation and fewer meetings, and more focus on execution.</p>
+
+        <p>The key shift is that the prototype carries the customer's voice with it. Engineering is not evaluating a document written by a PM — they are seeing something a real person has already touched and responded to. That changes what questions get asked and what objections get raised. The conversation moves from "is this the right thing to build?" to "how do we build this correctly?" That is a meaningfully different conversation.</p>
+
+        <h2>The Speed of Building Now Demands the Speed of Thinking</h2>
+
+        <p>AI accelerates every part of the pipeline, not just engineering. If product operates at the old speed, faster engineering will simply produce the wrong things faster. The leverage is not in the tools alone — it is in whether the people using them have updated their operating model to match.</p>
+
+        <p>I have been building products outside of my day job to pressure-test my own assumptions here. One is an executive protection intelligence platform — OSINT monitoring, advance work, threat intelligence, incident logging, all of it — built from research to interactive prototype without a traditional engineering team. Another is an AI-powered travel briefing app that detects trips from your calendar and email and generates briefings on your phone. Both went from concept to interactive prototype in sessions that I would have previously needed weeks and a full team to execute.</p>
+
+        <p>I am not sharing this to suggest any special capability on my part. I am sharing it because the experience of building those products changed what I actually believe about where the constraint sits. In both cases, the bottleneck was never the building. It was the clarity of thinking — knowing what to build, why it mattered, who it was for, and what winning looked like. That clarity is still entirely human. It still requires the same quality of listening, signal interpretation, and judgment it always has. What AI has done is remove almost everything else.</p>
+
+        <p>AI is not replacing product managers or engineers. But it is collapsing the time between signal and outcome. The organizations that win will not be those that use AI to write more code or more specs — they will be the ones that shorten the distance between a customer problem and a shipped solution.</p>
+
+        <p>The special missions unit model is not a metaphor for a future state. It is a description of what the best teams are already doing.</p>
+
+        <p>The days of the big blue navy are over.</p>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
