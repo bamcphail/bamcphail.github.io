@@ -161,6 +161,20 @@
         padding: 8px;
       }
     }
+  
+    #gate-bar { position: fixed; bottom: 0; left: 0; right: 0; height: 220px; background: linear-gradient(to bottom, rgba(253,249,227,0) 0%, rgba(253,249,227,0.96) 55%, #fdf9e3 100%); z-index: 100; pointer-events: none; display: none; }
+    #gate-modal { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); backdrop-filter: blur(3px); }
+    #gate-modal.open { display: flex; }
+    #gate-card { background: #fdf9e3; border-radius: 12px; padding: 40px 36px; max-width: 440px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.25); font-family: 'Cormorant Garamond', Georgia, serif; animation: gate-in 0.25s ease; }
+    @keyframes gate-in { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    #gate-card h2 { margin: 0 0 12px; font-size: 1.5rem; color: #1a1a1a; }
+    #gate-card p { color: #555; font-size: 0.92rem; margin: 0 0 22px; line-height: 1.65; }
+    #gate-email { width: 100%; padding: 10px 14px; border: 1.5px solid #c8c4b0; border-radius: 6px; font-size: 1rem; margin-bottom: 12px; box-sizing: border-box; outline: none; font-family: inherit; background: #fff; transition: border-color 0.15s; }
+    #gate-email:focus { border-color: #8b6f47; }
+    #gate-email.err { border-color: #c0392b; }
+    #gate-btn { width: 100%; padding: 12px; background: #1a1a1a; color: #fdf9e3; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; letter-spacing: 0.02em; transition: opacity 0.15s; }
+    #gate-btn:hover { opacity: 0.85; }
+    #gate-btn:disabled { opacity: 0.5; cursor: default; }
   </style>
 </head>
 <body>
@@ -256,5 +270,40 @@
       </div>
     </div>
   </div>
+  <script>
+    (function() {
+      var KEY = 'blog_gate_v1';
+      var ENDPOINT = 'https://formspree.io/f/mdapolwr';
+      var CUTOFF = 13;
+      var _stored = localStorage.getItem(KEY);
+      if (_stored) { posthog.identify(_stored, { email: _stored }); return; }
+      var pb = document.querySelector('.post-body');
+      if (!pb) return;
+      var sentinel = Array.from(pb.children)[CUTOFF];
+      if (!sentinel) return;
+      var bar = document.getElementById('gate-bar');
+      var modal = document.getElementById('gate-modal');
+      var triggered = false;
+      function showGate() { if (triggered) return; triggered = true; bar.style.display = 'block'; modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function hideGate() { bar.style.display = 'none'; modal.classList.remove('open'); document.body.style.overflow = ''; }
+      function check() { if (sentinel.getBoundingClientRect().top < window.innerHeight * 0.8) { window.removeEventListener('scroll', check); showGate(); } }
+      window.addEventListener('scroll', check, { passive: true });
+      document.getElementById('gate-btn').addEventListener('click', function() {
+        var input = document.getElementById('gate-email');
+        var email = input.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { input.classList.add('err'); input.focus(); return; }
+        input.classList.remove('err');
+        var btn = this;
+        btn.textContent = 'Submitting…'; btn.disabled = true;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', ENDPOINT);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onload = function() { posthog.identify(email, { email: email }); localStorage.setItem(KEY, email); hideGate(); };
+        xhr.onerror = function() { localStorage.setItem(KEY, email); hideGate(); };
+        xhr.send(JSON.stringify({ email: email, page: window.location.pathname }));
+      });
+    })();
+  </script>
 </body>
 </html>
