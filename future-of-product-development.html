@@ -78,7 +78,9 @@
       text-decoration: underline;
     }
 
-    .spacer { height: 32px; }
+    .spacer {
+      height: 32px;
+    }
 
     .post-body p {
       font-size: 21px;
@@ -104,12 +106,60 @@
       padding: 36px 44px 0 72px;
     }
 
-    .post-image {
+    .hero-figure {
+      width: min(100%, 560px);
+      margin: 8px auto 40px auto;
+      padding: 10px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
+
+    .hero-figure img {
       display: block;
       width: 100%;
-      max-width: 700px;
       height: auto;
-      margin: 0 auto 32px auto;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 28px 24px 40px 40px;
+        background-image:
+          linear-gradient(to right, transparent 26px, #e8a0a0 26px, #e8a0a0 27.5px, transparent 27.5px),
+          repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 31px,
+            #d4cfa0 31px,
+            #d4cfa0 32px
+          );
+      }
+
+      .sticky-header {
+        margin: -28px -24px 0 -40px;
+        padding: 28px 24px 0 40px;
+      }
+
+      .post-title {
+        font-size: 22px;
+        line-height: 28px;
+      }
+
+      .post-subtitle,
+      .post-meta {
+        line-height: 28px;
+      }
+
+      .post-body p,
+      .post-body h2 {
+        font-size: 20px;
+      }
+
+      .hero-figure {
+        width: 100%;
+        margin: 0 auto 32px auto;
+        padding: 8px;
+      }
     }
   </style>
 </head>
@@ -124,7 +174,9 @@
       </div>
 
       <div class="post-body">
-        <img src="images/anxdjo.jpg" alt="Signal to outcome meme" class="post-image">
+        <figure class="hero-figure">
+          <img src="images/anxdjo.jpg" alt="Signal to outcome meme">
+        </figure>
 
         <p>The bottleneck in product development has shifted. For thirty years, the constraint was engineering capacity. Roadmaps and specs existed because we couldn't build fast enough. That's no longer true.</p>
 
