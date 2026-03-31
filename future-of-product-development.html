@@ -123,6 +123,7 @@
           var(--rule-color) var(--rule)
         );
       background-color: var(--paper);
+      background-position: 0 6px;
       padding-top: var(--rule);
       padding-left: 64px;
       padding-right: 18px;
@@ -501,7 +502,7 @@
         input.classList.remove('err');
 
         var btn = this;
-        btn.textContent = 'Submitting…';
+        btn.textContent = 'Submittingâ¦';
         btn.disabled = true;
 
         var xhr = new XMLHttpRequest();
