@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hybrid Operator — Bryce McPhail</title>
+  <meta property="og:title" content="The Hybrid Operator">
+  <meta property="og:description" content="What the best go-to-market product teams look like in 2026 and beyond.">
+  <meta property="og:url" content="https://bamcphail.github.io/the-hybrid-operator.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-60CYYZXDGK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-60CYYZXDGK');
+  </script>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.people.toString(u.people)+" (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_xWnmSiVF3y81u3nyAk4RlsyisIES46MfJBorJwXiGai', { api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' });
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #c8c4b0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 20px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .pad {
+      width: min(900px, 90vw);
+      background: #fdf9e3;
+      box-shadow:
+        0 2px 0 #e8c84a,
+        0 4px 0 #fdf9e3,
+        0 6px 0 #e8c84a,
+        0 8px 0 #fdf9e3,
+        0 10px 0 #e8c84a,
+        4px 14px 24px rgba(0,0,0,0.25),
+        2px 6px 8px rgba(0,0,0,0.15);
+      border-top: 4px solid #e8c84a;
+    }
+
+    .page {
+      padding: 36px 44px 48px 72px;
+      background-image:
+        linear-gradient(to right, transparent 46px, #e8a0a0 46px, #e8a0a0 47.5px, transparent 47.5px),
+        repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 31px,
+          #d4cfa0 31px,
+          #d4cfa0 32px
+        );
+      background-color: #fdf9e3;
+      background-position: 0 5px;
+      line-height: 32px;
+      min-height: 500px;
+    }
+
+    .post-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+    }
+
+    .post-subtitle {
+      font-size: 19px;
+      font-style: italic;
+      color: #555;
+      line-height: 32px;
+    }
+
+    .post-meta {
+      font-size: 17px;
+      color: #aaa;
+      font-style: italic;
+      line-height: 32px;
+    }
+
+    .post-meta a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    .post-meta a:hover {
+      text-decoration: underline;
+    }
+
+    .spacer { height: 32px; }
+
+    .post-body p {
+      font-size: 21px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .post-body h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdf9e3;
+      margin: -36px -44px 0 -72px;
+      padding: 36px 44px 0 72px;
+    }
+
+    #gate-bar { position: fixed; bottom: 0; left: 0; right: 0; height: 220px; background: linear-gradient(to bottom, rgba(253,249,227,0) 0%, rgba(253,249,227,0.96) 55%, #fdf9e3 100%); z-index: 100; pointer-events: none; display: none; }
+    #gate-modal { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); backdrop-filter: blur(3px); }
+    #gate-modal.open { display: flex; }
+    #gate-card { background: #fdf9e3; border-radius: 12px; padding: 40px 36px; max-width: 440px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.25); font-family: 'Cormorant Garamond', Georgia, serif; animation: gate-in 0.25s ease; }
+    @keyframes gate-in { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    #gate-card h2 { margin: 0 0 12px; font-size: 1.5rem; color: #1a1a1a; }
+    #gate-card p { color: #555; font-size: 0.92rem; margin: 0 0 22px; line-height: 1.65; }
+    #gate-email { width: 100%; padding: 10px 14px; border: 1.5px solid #c8c4b0; border-radius: 6px; font-size: 1rem; margin-bottom: 12px; box-sizing: border-box; outline: none; font-family: inherit; background: #fff; transition: border-color 0.15s; }
+    #gate-email:focus { border-color: #8b6f47; }
+    #gate-email.err { border-color: #c0392b; }
+    #gate-btn { width: 100%; padding: 12px; background: #1a1a1a; color: #fdf9e3; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; letter-spacing: 0.02em; transition: opacity 0.15s; }
+    #gate-btn:hover { opacity: 0.85; }
+    #gate-btn:disabled { opacity: 0.5; cursor: default; }
+  </style>
+</head>
+<body>
+  <div id="gate-bar"></div>
+  <div id="gate-modal">
+    <div id="gate-card">
+      <h2>Keep reading</h2>
+      <p>Please enter your email to keep reading. This is only used for Bryce's personal understanding of blog readership.</p>
+      <input id="gate-email" type="email" placeholder="your@email.com">
+      <button id="gate-btn">Continue reading</button>
+    </div>
+  </div>
+  <div class="pad">
+    <div class="page">
+      <div class="sticky-header">
+        <div class="post-title">The Hybrid Operator</div>
+        <div class="post-subtitle">What the best go-to-market product teams look like in 2026 and beyond</div>
+        <div class="post-meta">June 2026 &nbsp;|&nbsp; <a href="index.html">&larr; All blogs</a></div>
+        <div class="spacer"></div>
+      </div>
+      <div class="post-body">
+
+        <p>In a previous piece, I wrote about SMUs — Special Missions Units — and how I've leveraged that model on the engineering side to increase output, increase speed, strengthen team cohesion and ownership, and meaningfully improve engineering happiness. The premise is simple: small teams, tight missions, clear outcomes. That piece was about what the engineering organization looks like. This one is about go-to-market.</p>
+
+        <p>I want to paint a picture of what I believe the best product teams look like moving forward. At the center of that picture is a role I call the hybrid operator.</p>
+
+        <h2>What Is a Hybrid Operator?</h2>
+
+        <p>Product managers in 2026 and beyond are not just product managers. They are not just product owners. They are not just technical leads or pathfinders or roadmap owners. They are all of those things at once, and they flex into whichever is needed at any given moment.</p>
+
+        <p>As I wrote in <em>Signal is the Bottleneck</em>, as code becomes easier to write and the cost of building falls, what matters most is finding signal — the right people, the right problems, the actionable intelligence that actually generates ARR. The hybrid operator is the person built to do exactly that, at the intersection of every function that touches the product.</p>
+
+        <p>A hybrid operator is someone as comfortable on-site with a client as they are demoing to a prospect. As comfortable taking feedback calls during a POC as they are submitting a PR for a fix. As comfortable leading a team and building alignment as they are out in the market finding the next signal. They are the utility player — the one role that can plug into any gap and make the whole machine run.</p>
+
+        <h2>The Team</h2>
+
+        <p>I believe the future of companies — and I recognize how grandiose that sounds — looks like SMUs across both go-to-market and engineering. One to three engineers. One to three go-to-market teammates. And at the center: a product manager. A hybrid operator whose only job is to go win ARR.</p>
+
+        <p>On the go-to-market side, the roster looks like this. One salesperson — someone with genuine expertise in building relationships, closing deals, pricing models, and everything else that separates an elite seller from a capable one. One internal subject matter expert — someone who has been in the seat, knows what the industry cares about, can answer the questions that a person who has never lived that role cannot answer, and can instantly pressure-test whether what we are building actually solves a real problem. And one product marketer — someone who understands the client deeply, speaks their language, and knows how to take what was built for one client and reframe it in a way that makes the rest of the industry want it too.</p>
+
+        <p>Attach one to three engineers to that group and you have the unit. A small, autonomous team with a focused mandate: find a way to win a market, or expand a lead until competition becomes almost laughable.</p>
+
+        <h2>How It Works: Walking the Full Cycle</h2>
+
+        <p>The hybrid operator is involved in every step. Not as a coordinator or a gatekeeper — as an active participant in each phase of the work. Let me walk through what that looks like in practice.</p>
+
+        <p>The salesperson surfaces a prospect. Their read is that there is real interest. At that point it becomes a joint mission between the salesperson and the PM: build the most compelling pitch possible and demo it in a way that makes the product impossible to ignore. The goal might be a signed deal. More often, in complex markets, the goal is to start a POC.</p>
+
+        <p>Once a POC begins, the hybrid operator takes the lead. They run weekly check-ins — or whatever cadence fits the engagement — and their job in those meetings is to gather feedback that is specific, actionable, and clear. Not vague impressions. Not sentiment. Signal that can be handed to engineers and turned into shipped work in days, not weeks. The pace of response is itself part of the product. When a client sees their feedback reflected in the product before the next check-in, the product starts to feel like it was built specifically for them. That feeling is hard to put a price on and even harder for a competitor to replicate.</p>
+
+        <p>While those feedback loops are running between POC check-ins, the product marketer is not sitting idle. They are asking: can any of what we are building here be reframed for the broader market? Can this feature, this workflow, this solution become a story that generates pipeline beyond this one prospect? They are building that story in partnership with the salesperson, so that by the time the POC ends, there is already a list of next demos queued up. The pipeline grows while the current deal is still being closed.</p>
+
+        <p>When it is time to make a go/no-go decision — does this prospect want to become a client, and what does that deal look like — that falls to the salesperson and the hybrid operator together. They own the pricing conversation, the close, and everything in between.</p>
+
+        <h2>What the PM Is Actually Doing</h2>
+
+        <p>Zooming out from the cycle, the hybrid operator is doing five things simultaneously, and the ability to hold all five at once is what makes this role rare.</p>
+
+        <p>First, pathfinding — going into the market, finding the right prospects, and helping shape a pitch that makes the product land. Second, gathering and processing signal — whether during a POC, in a feedback call, or from an existing client — and maintaining the tight loop between what the market says and what engineering builds. Third, building — not just directing the engineering team, but rolling up sleeves and building features directly when the opportunity is there. If a PM can ship something themselves to close a deal, they should. Fourth, translating wins into pipeline — partnering with product marketing to make sure what worked for one client becomes the foundation for the next ten. And fifth, owning the outcome — the ARR target, the client count, the metric that the team agreed to go after. The hybrid operator is the one person on the team who is accountable for all of it.</p>
+
+        <h2>Embedded PM</h2>
+
+        <p>One of the most powerful things this model enables is what I call embedded product management — or just embedded, for short.</p>
+
+        <p>The salesperson and the PM go on-site together. Not to present. Not to run a formal review. They sit with the users — not just the buyers, the actual users — and watch how the product is being used in the real environment. What the users are working around. Where they slow down. What they wish was different. The kind of feedback that never makes it into a support ticket because the people living with the problem have stopped noticing it.</p>
+
+        <p>When you gather that signal in the room, you can act on it the same day. You can have something showing by the next morning. You can demonstrate to a client that you heard them, and you moved, and you moved fast. That creates a kind of loyalty that is very difficult to unwind, even in a competitive market. I have done this at TRM and seen it work. It is not a nice-to-have. It is one of the highest-leverage things a PM can do.</p>
+
+        <h2>Why This Is the Future</h2>
+
+        <p>The best product teams will run as SMUs. Fewer people, narrower ownership, clearer outcomes. Small units that can move autonomously, read the market in real time, and generate outsized returns because they function as one team rather than a collection of functions that hand off to each other.</p>
+
+        <p>What this model produces is a revenue engine. One that continuously finds intelligence from the market, turns that intelligence into product, and turns that product into closed deals. The loop never stops. Signal becomes product. Product becomes pipeline. Pipeline becomes ARR. And the team that runs this loop the fastest wins.</p>
+
+        <p>The new product manager is the hybrid operator. They pathfind with sales. They read markets with internal SMEs. They expand a single client need into an entire vertical with product marketing. They build with their engineering team. They own the outcome.</p>
+
+        <p>As I heard on the Founders Podcast — a quote I keep coming back to — these people are racehorses. And there is a reason racehorses wear blinders. Point them at a clear, tight goal, and there is no ceiling on what they can produce.</p>
+
+        <p>The best product managers already operate this way. The organizations that build SMUs with them will be hard to beat.</p>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var KEY = 'blog_gate_v1';
+      var ENDPOINT = 'https://formspree.io/f/mdapolwr';
+      var CUTOFF = 13;
+      var _stored = localStorage.getItem(KEY);
+      if (_stored) { posthog.identify(_stored, { email: _stored }); return; }
+      var pb = document.querySelector('.post-body');
+      if (!pb) return;
+      var sentinel = Array.from(pb.children)[CUTOFF];
+      if (!sentinel) return;
+      var bar = document.getElementById('gate-bar');
+      var modal = document.getElementById('gate-modal');
+      var triggered = false;
+      function showGate() { if (triggered) return; triggered = true; bar.style.display = 'block'; modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function hideGate() { bar.style.display = 'none'; modal.classList.remove('open'); document.body.style.overflow = ''; }
+      function check() { if (sentinel.getBoundingClientRect().top < window.innerHeight * 0.8) { window.removeEventListener('scroll', check); showGate(); } }
+      window.addEventListener('scroll', check, { passive: true });
+      document.getElementById('gate-btn').addEventListener('click', function() {
+        var input = document.getElementById('gate-email');
+        var email = input.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { input.classList.add('err'); input.focus(); return; }
+        input.classList.remove('err');
+        var btn = this;
+        btn.textContent = 'Submitting…'; btn.disabled = true;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', ENDPOINT);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.onload = function() { posthog.identify(email, { email: email }); localStorage.setItem(KEY, email); hideGate(); };
+        xhr.onerror = function() { localStorage.setItem(KEY, email); hideGate(); };
+        xhr.send(JSON.stringify({ email: email, page: window.location.pathname }));
+      });
+    })();
+  </script>
+</body>
+</html>
