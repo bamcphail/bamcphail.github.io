@@ -4,7 +4,34 @@
   <meta charset="UTF-8">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ÃÂ°ÃÂÃÂÃÂ</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bryce McPhail's Blog</title>
+  <title>Bryce McPhail — Product Management Essays for the AI Era</title>
+  <meta name="description" content="Long-form essays by product leader Bryce McPhail on product management, leadership, signal, and building in the AI era.">
+  <link rel="canonical" href="https://bamcphail.github.io/">
+  <meta property="og:title" content="Bryce McPhail — Product Management Essays">
+  <meta property="og:description" content="Essays on how product management is changing in the AI era.">
+  <meta property="og:url" content="https://bamcphail.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bryce McPhail">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@bamcphail">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bryce McPhail",
+    "url": "https://bamcphail.github.io/",
+    "author": {
+      "@type": "Person",
+      "name": "Bryce McPhail",
+      "url": "https://bamcphail.github.io/about.html",
+      "sameAs": [
+        "https://x.com/bamcphail",
+        "https://www.linkedin.com/in/bryceam/",
+        "https://github.com/bamcphail"
+      ]
+    }
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,7 +84,7 @@
     h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; line-height: 32px; letter-spacing: -0.3px; }
     h1 a { color: #1a1a1a; text-decoration: none; }
     .nav { display: flex; gap: 24px; line-height: 32px; }
-    .nav a { font-size: 18px; font-style: italic; color: #aaa; text-decoration: none; cursor: pointer; }
+    .nav a { font-size: 18px; font-style: italic; color: #aaa; text-decoration: none; }
     .nav a.active { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; }
     .nav a:hover { color: #1a1a1a; }
     .divider { border: none; border-top: 1px solid #b8b090; margin: 16px 0; }
@@ -66,11 +93,6 @@
     td.date { color: #aaa; font-size: 17px; white-space: nowrap; padding-right: 24px; width: 90px; font-style: italic; }
     td.title a { color: #1a1a1a; text-decoration: none; font-size: 22px; }
     td.title a:hover { text-decoration: underline; }
-    .about-body { display: none; }
-    .about-body p { font-size: 21px; color: #222; line-height: 32px; margin: 0 0 32px 0; }
-    .about-body .contact { font-size: 19px; color: #444; line-height: 32px; }
-    .about-body .contact a { color: #444; text-decoration: none; border-bottom: 1px solid #aaa; }
-    .about-body .contact a:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-60CYYZXDGK"></script>
@@ -82,7 +104,7 @@
   </script>
   <!-- PostHog Analytics -->
   <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.people.toString(u.people)+" (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+"."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.people.toString(u.people)+" (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_xWnmSiVF3y81u3nyAk4RlsyisIES46MfJBorJwXiGai', {
       api_host: 'https://us.i.posthog.com',
       person_profiles: 'identified_only',
@@ -93,53 +115,39 @@
   <div class="pad">
     <div class="page">
       <div class="sticky-header">
-        <h1><a href="index.html">Bryce McPhail's Blog</a></h1>
+        <h1><a href="/">Bryce McPhail's Blog</a></h1>
         <div class="nav">
-          <a id="tab-blogs" class="active" onclick="show('blogs')">Blogs</a>
-          <a id="tab-about" onclick="show('about')">About Me</a>
+          <a class="active" href="/">Blogs</a>
+          <a href="/about.html">About Me</a>
         </div>
         <hr class="divider">
       </div>
       <div id="view-blogs">
         <table>
           <tr>
-            <td class="date">Mar 2026</td>
-            <td class="title"><a href="future-of-product-development.html">What I Think I Think About the Future of Product Development</a></td>
-          </tr>
-          <tr>
-            <td class="date">Mar 2026</td>
-            <td class="title"><a href="signal-is-the-bottleneck.html">Signal is the Bottleneck</a></td>
-          </tr>
-          <tr>
-            <td class="date">Mar 2026</td>
-            <td class="title"><a href="team-room.html">TeamRoom</a></td>
-          </tr>
-                    <tr>
-            <td class="date">Jun 2026</td>
-            <td class="title"><a href="the-hybrid-operator.html">The Hybrid Operator</a></td>
-          </tr>
-          <tr>
             <td class="date">Aug 2026</td>
-            <td class="title"><a href="can-you-cook.html">Can You Cook?</a></td>
+            <td class="title"><a href="/can-you-cook.html">Can You Cook?</a></td>
+          </tr>
+          <tr>
+            <td class="date">Jun 2026</td>
+            <td class="title"><a href="/the-hybrid-operator.html">The Hybrid Operator</a></td>
+          </tr>
+          <tr>
+            <td class="date">Mar 2026</td>
+            <td class="title"><a href="/future-of-product-development.html">What I Think I Think About the Future of Product Development</a></td>
+          </tr>
+          <tr>
+            <td class="date">Mar 2026</td>
+            <td class="title"><a href="/signal-is-the-bottleneck.html">Signal is the Bottleneck</a></td>
+          </tr>
+          <tr>
+            <td class="date">Mar 2026</td>
+            <td class="title"><a href="/team-room.html">TeamRoom</a></td>
           </tr>
           <!-- Add new articles above this line -->
         </table>
       </div>
-      <div id="view-about" class="about-body">
-        <p>Bryce McPhail is a product leader with experience building and scaling products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare.</p>
-        <div class="contact">Email &mdash; <a href="mailto:mcphail.career@gmail.com">mcphail.career@gmail.com</a></div>
-        <div class="contact">X / Twitter &mdash; <a href="https://x.com/bamcphail" target="_blank">@bamcphail</a></div>
-        <div class="contact">LinkedIn &mdash; <a href="https://www.linkedin.com/in/bryceam/" target="_blank">linkedin.com/in/bryceam</a></div>
-      </div>
     </div>
   </div>
-  <script>
-    function show(tab) {
-      document.getElementById('view-blogs').style.display = tab === 'blogs' ? 'block' : 'none';
-      document.getElementById('view-about').style.display = tab === 'about' ? 'block' : 'none';
-      document.getElementById('tab-blogs').className = tab === 'blogs' ? 'active' : '';
-      document.getElementById('tab-about').className = tab === 'about' ? 'active' : '';
-    }
-  </script>
 </body>
 </html>
