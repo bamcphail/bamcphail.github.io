@@ -48,6 +48,9 @@
     .nav a { font-size: 18px; font-style: italic; color: #aaa; text-decoration: none; }
     .nav a.active { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; }
     .nav a:hover { color: #1a1a1a; }
+    .nav { flex-wrap: wrap; align-items: baseline; }
+    .nav .nav-cta { font-style: normal; font-size: 17px; color: #1a1a1a; border-bottom: 1px solid #1a1a1a; margin-left: auto; text-decoration: none; }
+    .nav .nav-cta:hover { color: #444; border-bottom-color: #444; }
     .divider { border: none; border-top: 1px solid #b8b090; margin: 16px 0; }
     .about-body h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; line-height: 32px; margin: 0 0 32px 0; }
     .about-body p { font-size: 21px; color: #222; line-height: 32px; margin: 0 0 32px 0; }
@@ -73,8 +76,12 @@
 <body>
   <div class="pad"><div class="page">
     <div class="sticky-header">
-      <div class="site-title"><a href="/">Bryce McPhail's Blog</a></div>
-      <div class="nav"><a href="/">Blogs</a><a class="active" href="/about.html">About Me</a></div>
+      <div class="site-title"><a href="/">Bryce McPhail</a></div>
+      <div class="nav">
+          <a href="/writing.html">Writing</a>
+          <a class="active" href="/about.html">About</a>
+          <a class="nav-cta" href="mailto:mcphail.career@gmail.com">Get in touch</a>
+        </div>
       <hr class="divider">
     </div>
     <div class="about-body">
@@ -92,7 +99,8 @@
       <div class="contact">Email — <a href="mailto:mcphail.career@gmail.com">mcphail.career@gmail.com</a></div>
       <div class="contact">X / Twitter — <a href="https://x.com/bamcphail" target="_blank" rel="noopener">@bamcphail</a></div>
       <div class="contact">LinkedIn — <a href="https://www.linkedin.com/in/bryceam/" target="_blank" rel="noopener">linkedin.com/in/bryceam</a></div>
-      <div class="contact">Blog — <a href="https://bamcphail.github.io/">bamcphail.github.io</a></div>
+      <div class="contact">Writing — <a href="/writing.html">Essays</a></div>
+      <div class="contact">Home — <a href="/">bamcphail.github.io</a></div>
     </div>
   </div></div>
 </body>
