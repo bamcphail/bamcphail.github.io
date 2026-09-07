@@ -1,1 +1,525 @@
-PLACEHOLDER_WILL_REPLACE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal is the Bottleneck | Bryce McPhail</title>
+  <meta name="description" content="Why signal — not process, tools, or headcount — is the real bottleneck in product management.">
+  <link rel="canonical" href="https://bamcphail.github.io/signal-is-the-bottleneck.html">
+  <link rel="describedby" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="/signal-is-the-bottleneck.md">
+  <meta property="og:title" content="Signal is the Bottleneck | Bryce McPhail">
+  <meta property="og:description" content="Why signal — not process, tools, or headcount — is the real bottleneck in product management.">
+  <meta property="og:url" content="https://bamcphail.github.io/signal-is-the-bottleneck.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bryce McPhail">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@bamcphail">
+  <meta name="author" content="Bryce McPhail">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Signal is the Bottleneck",
+    "description": "Why signal — not process, tools, or headcount — is the real bottleneck in product management.",
+    "inLanguage": "en",
+    "datePublished": "2026-03-01",
+    "author": {
+      "@type": "Person",
+      "name": "Bryce McPhail",
+      "url": "https://bamcphail.github.io/about.html"
+    },
+    "mainEntityOfPage": "https://bamcphail.github.io/signal-is-the-bottleneck.html",
+    "publisher": {
+      "@type": "Person",
+      "name": "Bryce McPhail"
+    }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #c8c4b0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 20px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .pad {
+      width: min(900px, 90vw);
+      background: #fdf9e3;
+      box-shadow:
+        0 2px 0 #e8c84a,
+        0 4px 0 #fdf9e3,
+        0 6px 0 #e8c84a,
+        0 8px 0 #fdf9e3,
+        0 10px 0 #e8c84a,
+        4px 14px 24px rgba(0,0,0,0.25),
+        2px 6px 8px rgba(0,0,0,0.15);
+      border-top: 4px solid #e8c84a;
+    }
+
+    .page {
+      padding: 36px 44px 48px 72px;
+      background-image:
+        linear-gradient(to right, transparent 46px, #e8a0a0 46px, #e8a0a0 47.5px, transparent 47.5px),
+        repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 31px,
+          #d4cfa0 31px,
+          #d4cfa0 32px
+        );
+      background-color: #fdf9e3;
+      line-height: 32px;
+      min-height: 500px;
+    }
+
+    .post-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+    }
+
+    .post-subtitle {
+      font-size: 19px;
+      font-style: italic;
+      color: #555;
+      line-height: 32px;
+    }
+
+    .post-meta {
+      font-size: 17px;
+      color: #aaa;
+      font-style: italic;
+      line-height: 32px;
+    }
+
+    .post-meta a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    .post-meta a:hover {
+      text-decoration: underline;
+    }
+
+    .spacer { height: 32px; }
+
+    .post-body p {
+      font-size: 21px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .post-body h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+
+    .post-body a { color: #1a1a1a; text-decoration: underline; text-decoration-color: #c8b98a; text-underline-offset: 3px; }
+    .post-body a:hover { color: #6b4f1f; }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdf9e3;
+      margin: -36px -44px 0 -72px;
+      padding: 36px 44px 0 72px;
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-60CYYZXDGK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-60CYYZXDGK');
+  </script>
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.people.toString(u.people)+" (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_nRTz7QZfk7jEwPptbBE844tFKkHTasiFU3gAe9vC7LMU', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+    });
+  </script>
+</head>
+<body>
+  <div class="pad">
+    <div class="page">
+      <div class="sticky-header">
+        <h1 class="post-title">Signal is the Bottleneck</h1>
+        <div class="post-subtitle">Welcome to the Special Missions Unit Era of Product Development</div>
+        <div class="post-meta">March 2026 &nbsp;|&nbsp; By <a href="/about.html">Bryce McPhail</a> &nbsp;|&nbsp; <a href="/writing.html">&larr; Writing</a></div>
+        <div class="spacer"></div>
+      </div>
+      <div class="post-body">
+
+        <p>Product management has fundamentally changed.</p>
+
+        <p>Depending on who you ask, or how you learned product management, you will hear different definitions of what the job is. You may hear that product managers are mini-CEOs, that they are the CEO of their product, that they own outcomes for a product line or sector of the business, or that their job is to deliver value through products that meet what customers want, what customers need, or sometimes what customers do not yet even know they need. All of that is true, and none of that is going away. What is changing, however, is how that value is delivered.</p>
+
+        <p>The constraint in product development is shifting from how fast we can build software to how fast we can generate signal from the market.</p>
+
+        <h2>The Traditional Product Development Pipeline</h2>
+
+        <p>Traditionally, product development looks something like this.</p>
+
+        <p>You ingest noise from the market, prospects, customers, and internal stakeholders. You separate that noise into actionable signal. You prioritize that signal based on who said it, the ARR attached to it, the TAM opportunity, and whatever other metrics your organization values.</p>
+
+        <p>Once prioritized, that signal becomes a full product spec. In the product spec, you write the argument for why this should exist, why the prioritization is correct, why it will be defensible in the market, what the exact workflow should look like, and what metrics will measure success. The document becomes long, detailed, and legal-document-like.</p>
+
+        <p>Then engineering picks it up. Engineering runs feasibility, evaluates what exists today, what needs to change, what technical constraints exist, and they write their own technical spec. They size the work, ask clarification questions, and push back. More meetings happen. Eventually, if the idea survives the process, it gets built.</p>
+
+        <p>Then comes internal testing. Bugs are discovered and prioritized. Some are blockers. Some are acceptable. Then it ships.</p>
+
+        <p>After it ships, you watch Mixpanel dashboards, talk to users, observe workflows, and gather feedback. And then you start the process all over again.</p>
+
+        <p>This process is robust. It is thorough. It is detailed. It is exacting. But it is also heavy.</p>
+
+        <p>I believe the best analogy for the traditional product development process is the big blue navy. It takes years to design the ship, years to build the ship, years to test the ship, and years to train the crew to operate the ship. It takes months to repair the ship, weeks to move the ship, and days to prepare the ship.</p>
+
+        <p>The system is powerful, but it is not agile and it is not fast. Increasingly, it is not what the future of product development looks like.</p>
+
+        <h2>The Special Missions Unit Model</h2>
+
+        <p>To continue the analogy carefully, because business and warfare are obviously not the same. There are far greater risks in actual war than there are in business, and I would not want anyone to think I am saying they are one and the same.</p>
+
+        <p>But the future of product development looks much closer to a special missions unit.</p>
+
+        <p>Think Development Group or SEAL Team Six. Think Combat Applications Group or Delta Force. Think Air Force PJs. Think the 160th SOAR, the Night Stalkers.</p>
+
+        <p>These are units whose job is to be ready within hours, get on a plane, go anywhere in the world, and execute a surgical mission. Small teams, fast timelines, precise outcomes with very clear reasoning behind them.</p>
+
+        <p>I believe that is increasingly what product development looks like.</p>
+
+        <h2>Getting Close to the User</h2>
+
+        <p>In my current role at TRM Labs, I own the outcomes for the financial institutions and regulators business line.</p>
+
+        <p>One program I have created is called Embedded PM, or Embedded Product Manager. If you are familiar with forward deployed engineering, which was popularized by companies like Palantir, this is essentially forward deployed product management on a smaller timescale.</p>
+
+        <p>Instead of sitting behind roadmaps and internal planning cycles, I embed directly with our customers.</p>
+
+        <p>I travel with an account director or someone from our go to market team. Sometimes multiple people. We go onsite to financial institutions. We sit with the teams actually using our product. We learn who they are, what they do, what jobs they are responsible for, and what outcomes they are trying to achieve.</p>
+
+        <p>And we listen.</p>
+
+        <p>We listen. We ask questions. We listen to those answers. We ask more questions, and we listen again.</p>
+
+        <p>We listen, and we listen, and we listen.</p>
+
+        <p>We gather noise.</p>
+
+        <p>Then we review that noise, and we translate that noise into signal.</p>
+
+        <p>This process alone is not revolutionary. Companies have been doing versions of this for many years at this point. What is new is what happens next.</p>
+
+        <h2>Turning Signal Into Outcomes</h2>
+
+        <p>During one embedded visit with a very large, globally known financial institution, we were discussing the current regulatory environment around digital assets.</p>
+
+        <p>During the conversation, a user asked a question about how something worked in our product and what the capabilities were. The account director answered the question well.</p>
+
+        <p>But something about the question stuck with me.</p>
+
+        <p>It revealed that the user was trying to accomplish a specific job, and our product could get them close to that outcome, but it did not give them a perfect path or workflow to achieve the desired outcome.</p>
+
+        <p>So I did something different.</p>
+
+        <p>I took the notes I was already writing and dropped them into a workflow I built using Claude that I call Product Team Room.</p>
+
+        <p>Product Team Room is essentially a product manager's operating system that I built using the new capabilities that these different AI tools have. It is my personal operating system for product thinking and the ins and outs and actions that my job requires.</p>
+
+        <p>I drop the notes I was taking into Product Team Room, and it generates a mini product spec.</p>
+
+        <p>Not a multiple page legal document.</p>
+
+        <p>Just enough to tell the story — who is the user, what role do they play, what team are they on, what job are they trying to accomplish, and why it matters.</p>
+
+        <p>Most of that context was already taken within the notes or in the preceding document that I had created before doing this embedded PM visit. All I needed to share were the notes themselves.</p>
+
+        <p>Then I take the mini spec that Product Team Room outputs and drop it into a prototype generator like Magic Patterns, Claude, or Codex.</p>
+
+        <p>Within minutes — sometimes seconds — I have a fully clickable prototype.</p>
+
+        <p>I literally turned my laptop around when there was a gap in the conversation and said, "I think this is what you were talking about. Does this look like what you would need to accomplish your goal within the workflow you were describing?"</p>
+
+        <p>The user can click it. They can explore it. They can interact with it. They can literally touch and feel it as much as you can with something on a computer screen.</p>
+
+        <p>In this particular instance, the response was immediate.</p>
+
+        <p>"Yes. That is exactly what I was looking for."</p>
+
+        <p>Then they suggested one additional tweak as the conversation went on.</p>
+
+        <p>I updated the prototype, and within minutes we had something extremely close to the right solution that we were going to deliver in production.</p>
+
+        <p>That prototype then went directly to engineering with a simple message — we have uncovered new signal. It is not noise. We need to prioritize building this next.</p>
+
+        <p>Engineering built the initial delivery in days. Not weeks. Not months. And the client was able to review it a few days later.</p>
+
+        <h2>The Real Constraint Has Changed</h2>
+
+        <p>For a long time, the limiting factor in product development was engineering capacity. Roadmaps existed because you simply could not build everything fast enough.</p>
+
+        <p>But the barrier to building software is collapsing. What used to take months can now take days. What used to take days can now take minutes.</p>
+
+        <p>And when that happens, the constraint shifts.</p>
+
+        <p>The constraint is no longer how fast we can build. The constraint is how fast we can generate signal.</p>
+
+        <p>The constraint is no longer on the R&amp;D side of the pipeline — it is on the go to market side of the pipeline.</p>
+
+        <p>It is my belief that the best product managers today understand this. The pipeline is no longer blocked by engineering output. It is blocked by how much signal you can generate from the market.</p>
+
+        <h2>Generating Signal</h2>
+
+        <p>At TRM, I approach this through three programs designed specifically to generate signal.</p>
+
+        <h2>Client Feedback Group</h2>
+
+        <p>First, a client feedback group.</p>
+
+        <p>I run a feedback group made up of our most engaged clients — the people actually using our products every day. These are the leaders who are setting the course at financial institutions for entire digital asset programs, architecting what those look like, and leading the path forward.</p>
+
+        <p>These are invite only members that have access to a great network.</p>
+
+        <p>In each Financial Institution Feedback Group session, we show what we have recently shipped. We show what is about to ship in the coming days or weeks. Then we share what we are thinking about next.</p>
+
+        <p>And then we ask a powerful question.</p>
+
+        <p>What did you expect to see on our roadmap that you did not see today?</p>
+
+        <p>What is on your roadmap that is not on ours?</p>
+
+        <p>That simple question generates extraordinary signal when you have a group of people that are comfortable with each other and understand that this is the tip of the spear when it comes to digital assets in the financial institution space.</p>
+
+        <p>We convert all of that signal into mini specs, prototypes, and often new features within days or weeks.</p>
+
+        <p>The Financial Institution Feedback Group is seen as incredibly valuable by each of the attendees because they do not just feel heard, but they see outcomes driven by what they share in every session.</p>
+
+        <h2>Embedded PM</h2>
+
+        <p>The next program is the Embedded PM program.</p>
+
+        <p>Where the Financial Institution Feedback Group generates top level signal, Embedded PM generates deeper signal.</p>
+
+        <p>We sit with users. We watch how they work. We understand the workflows that exist around our product — not just the workflows we designed inside it.</p>
+
+        <p>Clients often say something after these visits that means a lot to me.</p>
+
+        <p>"We do not see you as a vendor. We see you as a partner and an architect in our digital asset program."</p>
+
+        <p>That is the level of relationship required to generate meaningful signal.</p>
+
+        <h2>FI Firesides</h2>
+
+        <p>The third way I generate signal is through a program we call FI Firesides.</p>
+
+        <p>These are small sessions with users across each organization — from executives running digital asset programs to frontline analysts earlier in their career using the product every day.</p>
+
+        <p>The goal here is empathy.</p>
+
+        <p>I do not just want to understand the company or the roadmap that I am trying to uncover in the feedback group.</p>
+
+        <p>I want to understand the person.</p>
+
+        <p>This transforms how we build products from "we are building for a compliance analyst at Bank X" to "we are building a product for Sarah. She is the VP of global compliance, based in New York, responsible for North American investigations at Bank X. Here is her problem, and here is how we will solve it."</p>
+
+        <p>When you understand your users at that level, product decisions become dramatically clearer.</p>
+
+        <p>You are no longer building generic features for hypothetical users.</p>
+
+        <p>You are building solutions for very real people.</p>
+
+        <h2>The End of the Roadmap</h2>
+
+        <p>The era of rigid 6, 12, or 24 month roadmaps is fading.</p>
+
+        <p>The era of giant product specs that read like legal documents is fading.</p>
+
+        <p>The era of month long implementation cycles is fading.</p>
+
+        <p>Not because planning is bad, but because the speed of building has fundamentally changed.</p>
+
+        <p>The organizations that win will operate less like the big blue navy and more like special missions units.</p>
+
+        <p>They will generate signal from the market — or intelligence.</p>
+
+        <p>Then they will deploy small teams to solve specific problems.</p>
+
+        <p>They will execute quickly with speed and precision.</p>
+
+        <p>Then they will debrief.</p>
+
+        <p>Then they will move on to the next mission.</p>
+
+        <h2>The Future of Product Management</h2>
+
+        <p>The best product managers today understand something very important.</p>
+
+        <p>Engineering output is no longer the bottleneck.</p>
+
+        <p>Signal is.</p>
+
+        <p>The best product managers build systems that generate signal.</p>
+
+        <p>They make customers comfortable sharing feedback that is signal.</p>
+
+        <p>They embed with users to uncover signal.</p>
+
+        <p>They prototype solutions immediately based on signal.</p>
+
+        <p>And they deploy engineering teams against real problems — the signal — not roadmap guesses.</p>
+
+        <p>Not because they have written the perfect spec, but because they have unmistakable signal for a user they deeply understand and are willing to serve.</p>
+
+        <p>It is my belief product development and product management have fundamentally changed.</p>
+
+        <p>The days of the big blue navy are over.</p>
+
+        <p>Welcome to the era of the special missions unit product development lifecycle.</p>
+
+        <h2>Related</h2>
+        <p><a href="/the-hybrid-operator.html">The Hybrid Operator</a> · <a href="/can-you-cook.html">Can You Cook?</a> · <a href="/about.html">About</a></p>
+
+      </div>
+    </div>
+  </div>
+
+<!-- Email Gate -->
+<style>
+  #gate-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 220px;
+    background: linear-gradient(to bottom, rgba(253,249,227,0) 0%, rgba(253,249,227,0.96) 55%, #fdf9e3 100%);
+    z-index: 100;
+    pointer-events: none;
+    display: none;
+  }
+  #gate-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+  }
+  #gate-modal.open { display: flex; }
+  #gate-card {
+    background: #fdf9e3;
+    border-radius: 12px;
+    padding: 40px 36px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    animation: gate-in 0.25s ease;
+  }
+  @keyframes gate-in {
+    from { transform: translateY(16px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  #gate-card h2 { margin: 0 0 12px; font-size: 1.5rem; color: #1a1a1a; }
+  #gate-card p { color: #555; font-size: 0.92rem; margin: 0 0 22px; line-height: 1.65; }
+  #gate-email {
+    width: 100%; padding: 10px 14px;
+    border: 1.5px solid #c8c4b0; border-radius: 6px;
+    font-size: 1rem; margin-bottom: 12px; box-sizing: border-box;
+    outline: none; font-family: inherit; background: #fff;
+    transition: border-color 0.15s;
+  }
+  #gate-email:focus { border-color: #8b6f47; }
+  #gate-email.err { border-color: #c0392b; }
+  #gate-btn {
+    width: 100%; padding: 12px;
+    background: #1a1a1a; color: #fdf9e3;
+    border: none; border-radius: 6px;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    font-family: inherit; letter-spacing: 0.02em;
+    transition: opacity 0.15s;
+  }
+  #gate-btn:hover { opacity: 0.85; }
+  #gate-btn:disabled { opacity: 0.5; cursor: default; }
+</style>
+<div id="gate-bar"></div>
+<div id="gate-modal">
+  <div id="gate-card">
+    <h2>Keep reading</h2>
+    <p>Please enter your email to keep reading. This is only used for Bryce's personal understanding of blog readership.</p>
+    <input id="gate-email" type="email" placeholder="your@email.com" />
+    <button id="gate-btn">Continue reading</button>
+  </div>
+</div>
+<script>
+(function() {
+  var KEY = 'blog_gate_v1';
+  var ENDPOINT = 'https://formspree.io/f/mdapolwr';
+  var CUTOFF = 13;
+  var _stored = localStorage.getItem(KEY);
+  if (_stored) { posthog.identify(_stored, { email: _stored }); return; }
+  var pb = document.querySelector('.post-body');
+  if (!pb) return;
+  var sentinel = Array.from(pb.children)[CUTOFF];
+  if (!sentinel) return;
+  var bar = document.getElementById('gate-bar');
+  var modal = document.getElementById('gate-modal');
+  var triggered = false;
+  function showGate() {
+    if (triggered) return;
+    triggered = true;
+    bar.style.display = 'block';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function hideGate() {
+    bar.style.display = 'none';
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function check() {
+    if (sentinel.getBoundingClientRect().top < window.innerHeight * 0.8) {
+      window.removeEventListener('scroll', check);
+      showGate();
+    }
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  document.getElementById('gate-btn').addEventListener('click', function() {
+    var input = document.getElementById('gate-email');
+    var email = input.value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      input.classList.add('err'); input.focus(); return;
+    }
+    input.classList.remove('err');
+    var btn = this;
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', ENDPOINT);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onload = function() { posthog.identify(email, { email: email }); localStorage.setItem(KEY, email); hideGate(); };
+    xhr.onerror = function() { localStorage.setItem(KEY, email); hideGate(); };
+    xhr.send(JSON.stringify({ email: email, page: window.location.pathname }));
+  });
+})();
+</script>
+</body>
+</html>
