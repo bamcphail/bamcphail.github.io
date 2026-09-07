@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ÃÂ°ÃÂÃÂÃÂ</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bryce McPhail — Product Management Essays for the AI Era</title>
-  <meta name="description" content="Long-form essays by product leader Bryce McPhail on product management, leadership, signal, and building in the AI era.">
+  <title>Bryce McPhail — Product Person, Getting One Percent Better Each Day</title>
+  <meta name="description" content="Bryce McPhail is a product person looking to get one percent better each day. Essays and operating principles on signal, delivery, and hybrid operators across SaaS, fintech, crypto, dual use, banking, and healthcare.">
   <link rel="canonical" href="https://bamcphail.github.io/">
-  <link rel="describedby" href="/llms.txt">
-  <link rel="alternate" type="text/markdown" href="/index.md">
-  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Bryce McPhail">
-  <meta property="og:title" content="Bryce McPhail — Product Management Essays">
-  <meta property="og:description" content="Essays on how product management is changing in the AI era.">
+  <link rel="alternate" type="text/markdown" href="https://bamcphail.github.io/index.md" title="Markdown mirror">
+  <link rel="alternate" type="application/rss+xml" href="https://bamcphail.github.io/feed.xml" title="Bryce McPhail essays">
+  <link rel="describedby" href="https://bamcphail.github.io/llms.txt" title="LLM-oriented site summary">
+  <meta property="og:title" content="Bryce McPhail — Product Person">
+  <meta property="og:description" content="Product person looking to get one percent better each day. Essays on signal, delivery, and hybrid operators.">
   <meta property="og:url" content="https://bamcphail.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bryce McPhail">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@bamcphail">
+  <meta name="twitter:title" content="Bryce McPhail — Product Person">
+  <meta name="twitter:description" content="Product person looking to get one percent better each day.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Bryce McPhail",
     "url": "https://bamcphail.github.io/",
+    "description": "Product person looking to get one percent better each day.",
     "author": {
       "@type": "Person",
       "name": "Bryce McPhail",
@@ -32,12 +35,23 @@
         "https://www.linkedin.com/in/bryceam/",
         "https://github.com/bamcphail"
       ]
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Bryce McPhail",
-      "url": "https://bamcphail.github.io/"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bryce McPhail",
+    "url": "https://bamcphail.github.io/",
+    "sameAs": [
+      "https://x.com/bamcphail",
+      "https://www.linkedin.com/in/bryceam/",
+      "https://github.com/bamcphail"
+    ],
+    "jobTitle": "Product Leader",
+    "description": "Product person looking to get one percent better each day.",
+    "email": "mailto:mcphail.career@gmail.com"
   }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -77,7 +91,7 @@
           #d4cfa0 32px
         );
       background-color: #fdf9e3;
-      background-position: 0 4px;
+      background-position: 0 5px;
       line-height: 32px;
       min-height: 500px;
     }
@@ -89,18 +103,204 @@
       margin: -36px -44px 0 -72px;
       padding: 36px 44px 0 72px;
     }
-    h1 { font-size: 30px; font-weight: 500; color: #1a1a1a; line-height: 32px; letter-spacing: -0.3px; }
-    h1 a { color: #1a1a1a; text-decoration: none; }
-    .nav { display: flex; gap: 24px; line-height: 32px; }
-    .nav a { font-size: 18px; font-style: italic; color: #aaa; text-decoration: none; }
+    .site-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      letter-spacing: -0.3px;
+    }
+    .site-title a { color: #1a1a1a; text-decoration: none; }
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      line-height: 32px;
+    }
+    .nav a {
+      font-size: 18px;
+      font-style: italic;
+      color: #aaa;
+      text-decoration: none;
+    }
     .nav a.active { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; }
     .nav a:hover { color: #1a1a1a; }
+    .nav .nav-cta {
+      font-style: normal;
+      font-size: 17px;
+      color: #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+      margin-left: auto;
+    }
+    .nav .nav-cta:hover { color: #444; border-bottom-color: #444; }
     .divider { border: none; border-top: 1px solid #b8b090; margin: 16px 0; }
-    table { border-collapse: collapse; width: 100%; }
+    .section { margin: 0 0 32px 0; }
+    .section-label {
+      font-size: 17px;
+      font-style: italic;
+      color: #888;
+      line-height: 32px;
+      margin: 0 0 0 0;
+    }
+    h1.hero-name {
+      font-size: 28px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      letter-spacing: -0.4px;
+      margin: 0 0 32px 0;
+    }
+    .positioning {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+    .proof {
+      font-size: 21px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: baseline;
+      margin: 0 0 32px 0;
+      line-height: 32px;
+    }
+    .cta-primary {
+      font-size: 20px;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid #1a1a1a;
+      font-weight: 500;
+    }
+    .cta-primary:hover { color: #444; border-bottom-color: #444; }
+    .cta-secondary {
+      font-size: 19px;
+      font-style: italic;
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+    }
+    .cta-secondary:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+    .thesis-list { list-style: none; margin: 0 0 32px 0; padding: 0; }
+    .thesis-list li {
+      margin: 0 0 32px 0; /* one blank ruled line between theses */
+      padding: 0;
+      line-height: 32px;
+    }
+    .thesis-list a.thesis-title {
+      display: block;
+      font-size: 22px;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 500;
+      line-height: 32px;
+    }
+    .thesis-list a.thesis-title:hover { text-decoration: underline; }
+    .thesis-line {
+      display: block;
+      font-size: 19px;
+      font-style: italic;
+      color: #555;
+      line-height: 32px;
+    }
+    .principles {
+      list-style: none;
+      margin: 0 0 32px 0;
+      padding: 0;
+    }
+    .principles li {
+      font-size: 21px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+    .principles li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+    table { border-collapse: collapse; width: 100%; margin: 0 0 16px 0; }
     td { padding: 0; vertical-align: top; line-height: 32px; min-height: 32px; }
-    td.date { color: #aaa; font-size: 17px; white-space: nowrap; padding-right: 24px; width: 90px; font-style: italic; }
-    td.title a { color: #1a1a1a; text-decoration: none; font-size: 22px; }
+    td.date {
+      color: #aaa;
+      font-size: 17px;
+      white-space: nowrap;
+      padding-right: 24px;
+      width: 90px;
+      font-style: italic;
+    }
+    td.title a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 22px;
+    }
     td.title a:hover { text-decoration: underline; }
+    .more-link {
+      font-size: 19px;
+      font-style: italic;
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+      line-height: 32px;
+      display: inline-block;
+      margin: 0 0 32px 0;
+    }
+    .more-link:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+    .about-blurb p {
+      font-size: 21px;
+      color: #222;
+      line-height: 32px;
+      margin: 0 0 32px 0;
+    }
+    .site-footer {
+      margin-top: 16px;
+      padding-top: 0;
+    }
+    .site-footer .contact {
+      font-size: 19px;
+      color: #444;
+      line-height: 32px;
+    }
+    .site-footer .contact a {
+      color: #444;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+    }
+    .site-footer .contact a:hover {
+      color: #1a1a1a;
+      border-bottom-color: #1a1a1a;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 28px 24px 40px 40px; }
+      .sticky-header { margin: -28px -24px 0 -40px; padding: 28px 24px 0 40px; }
+      .nav .nav-cta { margin-left: 0; }
+      h1.hero-name { font-size: 28px; }
+      .positioning { font-size: 21px; }
+    }
+
+    /* notebook-grid lock: every text row is exactly one ruled line */
+    .page p, .page li, .page td, .page a, .page span, .page h1, .page h2, .page h3 {
+      line-height: 32px;
+    }
+    .cta-row { margin: 0 0 32px 0; line-height: 32px; }
+    .cta-primary, .cta-secondary { display: inline-block; line-height: 32px; vertical-align: baseline; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-60CYYZXDGK"></script>
@@ -123,14 +323,65 @@
   <div class="pad">
     <div class="page">
       <div class="sticky-header">
-        <h1><a href="/">Bryce McPhail's Blog</a></h1>
+        <div class="site-title"><a href="/">Bryce McPhail</a></div>
         <div class="nav">
-          <a class="active" href="/">Blogs</a>
-          <a href="/about.html">About Me</a>
+          <a href="/writing.html">Writing</a>
+          <a href="/about.html">About</a>
+          <a class="nav-cta" href="mailto:mcphail.career@gmail.com">Get in touch</a>
         </div>
         <hr class="divider">
       </div>
-      <div id="view-blogs">
+
+      <section class="section hero" aria-label="Introduction">
+        <h1 class="hero-name">Bryce McPhail</h1>
+        <p class="positioning">Product person looking to get one percent better each day.</p>
+        <p class="proof">I build and scale products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare. I write about what still matters in product when the job keeps getting rewritten — signal over noise, delivery over theater, operators who ship.</p>
+        <div class="cta-row">
+          <a class="cta-primary" href="mailto:mcphail.career@gmail.com">Get in touch</a>
+          <a class="cta-secondary" href="/writing.html">Read writing</a>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <section class="section" aria-labelledby="theses-heading">
+        <h2 id="theses-heading">Theses</h2>
+        <ul class="thesis-list">
+          <li>
+            <a class="thesis-title" href="/can-you-cook.html">Can You Cook?</a>
+            <span class="thesis-line">Great PMs deliver outcomes, not a skills checklist.</span>
+          </li>
+          <li>
+            <a class="thesis-title" href="/signal-is-the-bottleneck.html">Signal is the Bottleneck</a>
+            <span class="thesis-line">Signal — not process, tools, or headcount — is the real PM bottleneck.</span>
+          </li>
+          <li>
+            <a class="thesis-title" href="/the-hybrid-operator.html">The Hybrid Operator</a>
+            <span class="thesis-line">Best GTM/product teams are hybrid operators who build, sell, and ship.</span>
+          </li>
+          <li>
+            <a class="thesis-title" href="/team-room.html">TeamRoom</a>
+            <span class="thesis-line">A PM operating system for running teams and shipping work.</span>
+          </li>
+        </ul>
+      </section>
+
+      <hr class="divider">
+
+      <section class="section" aria-labelledby="how-heading">
+        <h2 id="how-heading">How I work</h2>
+        <ul class="principles">
+          <li>Judge the cook by what leaves the kitchen — outcomes, not a résumé of tools.</li>
+          <li>Treat signal as the scarce resource. Process and headcount do not fix a bad read of the market.</li>
+          <li>Move between product, go-to-market, and building without waiting for permission.</li>
+          <li>Run an operating system: ingest noise, structure it, tie it to outcomes, act the same day.</li>
+        </ul>
+      </section>
+
+      <hr class="divider">
+
+      <section class="section" aria-labelledby="writing-heading">
+        <h2 id="writing-heading">Writing</h2>
         <table>
           <tr>
             <td class="date">Aug 2026</td>
@@ -144,17 +395,26 @@
             <td class="date">Mar 2026</td>
             <td class="title"><a href="/future-of-product-development.html">What I Think I Think About the Future of Product Development</a></td>
           </tr>
-          <tr>
-            <td class="date">Mar 2026</td>
-            <td class="title"><a href="/signal-is-the-bottleneck.html">Signal is the Bottleneck</a></td>
-          </tr>
-          <tr>
-            <td class="date">Mar 2026</td>
-            <td class="title"><a href="/team-room.html">TeamRoom</a></td>
-          </tr>
-          <!-- Add new articles above this line -->
         </table>
-      </div>
+        <a class="more-link" href="/writing.html">All writing →</a>
+      </section>
+
+      <hr class="divider">
+
+      <section class="section about-blurb" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>I am a product leader with experience building and scaling products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare. I write long-form essays about how product management is changing in the AI era — what still matters, what is dying, and what great product managers actually do.</p>
+        <a class="more-link" href="/about.html">More about Bryce →</a>
+      </section>
+
+      <hr class="divider">
+
+      <footer class="site-footer">
+        <div class="contact">Email — <a href="mailto:mcphail.career@gmail.com">mcphail.career@gmail.com</a></div>
+        <div class="contact">X — <a href="https://x.com/bamcphail" target="_blank" rel="noopener">@bamcphail</a></div>
+        <div class="contact">LinkedIn — <a href="https://www.linkedin.com/in/bryceam/" target="_blank" rel="noopener">linkedin.com/in/bryceam</a></div>
+        <div class="contact">Writing — <a href="/writing.html">Essays</a></div>
+      </footer>
     </div>
   </div>
 </body>
