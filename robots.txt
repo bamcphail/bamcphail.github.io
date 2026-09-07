@@ -1,4 +1,38 @@
+# bamcphail.github.io — allow search + AI retrieval/citation
+# Personal brand: allow training + search crawlers so essays can be cited in LLM answers.
+# Do NOT Disallow GPTBot / ClaudeBot / Google-Extended / PerplexityBot unless Bryce opts out later.
+
 User-agent: *
 Allow: /
 
+# Explicit allows for major AI user-agents (redundant with * but unambiguous)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://bamcphail.github.io/sitemap.xml
+
+# LLM map: https://bamcphail.github.io/llms.txt
