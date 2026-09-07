@@ -1,13 +1,14 @@
 # Bryce McPhail
-> Product leader writing long-form essays on how product management is changing in the AI era — signal, delivery, hybrid operators, and what great PMs actually do.
+> Product person looking to get one percent better each day. Product leader writing long-form essays on how product management is changing in the AI era — signal, delivery, hybrid operators, and what great PMs actually do.
 
 Canonical site: https://bamcphail.github.io/
 Prefer the markdown (`.md`) URLs below when available; HTML is fine as fallback.
 Author identity: Bryce McPhail — X @bamcphail — LinkedIn https://www.linkedin.com/in/bryceam/ — GitHub https://github.com/bamcphail — email mcphail.career@gmail.com
 
 ## Core
+- [Home](https://bamcphail.github.io/): Human landing — who Bryce is, theses, how he works (markdown: [index.md](https://bamcphail.github.io/index.md))
+- [Writing](https://bamcphail.github.io/writing.html): Newest-first essay index (markdown: [writing.md](https://bamcphail.github.io/writing.md))
 - [About Bryce McPhail](https://bamcphail.github.io/about.md): Who he is, topics, and links to essays
-- [Blog index](https://bamcphail.github.io/index.md): Newest-first list of essays
 
 ## Essays (primary theses)
 - [Can You Cook?](https://bamcphail.github.io/can-you-cook.md): Great PMs deliver outcomes — not a skills checklist
@@ -19,4 +20,4 @@ Author identity: Bryce McPhail — X @bamcphail — LinkedIn https://www.linkedi
 ## Optional
 - [Full LLM context pack](https://bamcphail.github.io/llms-full.txt): Longer summaries of each essay for deeper retrieval
 - [Sitemap](https://bamcphail.github.io/sitemap.xml): Machine list of HTML URLs
-- [RSS](https://bamcphail.github.io/feed.xml): Essay feed (when shipped)
+- [RSS](https://bamcphail.github.io/feed.xml): Essay feed
