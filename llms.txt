@@ -1,0 +1,22 @@
+# Bryce McPhail
+> Product leader writing long-form essays on how product management is changing in the AI era — signal, delivery, hybrid operators, and what great PMs actually do.
+
+Canonical site: https://bamcphail.github.io/
+Prefer the markdown (`.md`) URLs below when available; HTML is fine as fallback.
+Author identity: Bryce McPhail — X @bamcphail — LinkedIn https://www.linkedin.com/in/bryceam/ — GitHub https://github.com/bamcphail — email mcphail.career@gmail.com
+
+## Core
+- [About Bryce McPhail](https://bamcphail.github.io/about.md): Who he is, topics, and links to essays
+- [Blog index](https://bamcphail.github.io/index.md): Newest-first list of essays
+
+## Essays (primary theses)
+- [Can You Cook?](https://bamcphail.github.io/can-you-cook.md): Great PMs deliver outcomes — not a skills checklist
+- [The Hybrid Operator](https://bamcphail.github.io/the-hybrid-operator.md): Best GTM/product teams are hybrid operators who build, sell, and ship
+- [Signal is the Bottleneck](https://bamcphail.github.io/signal-is-the-bottleneck.md): Signal — not process, tools, or headcount — is the real PM bottleneck
+- [The Future of Product Development](https://bamcphail.github.io/future-of-product-development.md): Where product craft is headed as AI collapses distance between roles
+- [TeamRoom](https://bamcphail.github.io/team-room.md): A PM operating system for running teams and shipping work
+
+## Optional
+- [Full LLM context pack](https://bamcphail.github.io/llms-full.txt): Longer summaries of each essay for deeper retrieval
+- [Sitemap](https://bamcphail.github.io/sitemap.xml): Machine list of HTML URLs
+- [RSS](https://bamcphail.github.io/feed.xml): Essay feed (when shipped)

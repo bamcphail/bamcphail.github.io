@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Bryce McPhail — Product Management Essays</title>
+    <link>https://bamcphail.github.io/</link>
+    <description>Long-form essays on how product management is changing in the AI era.</description>
+    <language>en-us</language>
+    <item>
+      <title>Can You Cook?</title>
+      <link>https://bamcphail.github.io/can-you-cook.html</link>
+      <guid>https://bamcphail.github.io/can-you-cook.html</guid>
+      <description>Product management isn't a skills checklist — it's whether you can deliver.</description>
+      <pubDate>Sat, 09 Aug 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Hybrid Operator</title>
+      <link>https://bamcphail.github.io/the-hybrid-operator.html</link>
+      <guid>https://bamcphail.github.io/the-hybrid-operator.html</guid>
+      <description>What the best go-to-market product teams look like in 2026.</description>
+      <pubDate>Mon, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>What I Think I Think About the Future of Product Development</title>
+      <link>https://bamcphail.github.io/future-of-product-development.html</link>
+      <guid>https://bamcphail.github.io/future-of-product-development.html</guid>
+      <description>Where product craft is headed as AI rewrites how teams build.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Signal is the Bottleneck</title>
+      <link>https://bamcphail.github.io/signal-is-the-bottleneck.html</link>
+      <guid>https://bamcphail.github.io/signal-is-the-bottleneck.html</guid>
+      <description>Why signal is the real bottleneck in product management.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>TeamRoom</title>
+      <link>https://bamcphail.github.io/team-room.html</link>
+      <guid>https://bamcphail.github.io/team-room.html</guid>
+      <description>A product manager's operating system for running teams and shipping work.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
