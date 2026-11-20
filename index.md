@@ -1,8 +1,14 @@
 # Bryce McPhail
 
-Product person looking to get one percent better each day.
+Bryce McPhail is a product leader based in Fort Worth, Texas, working across enterprise AI, fintech, and intelligence. He served as Senior Product Manager at TRM Labs from May 2025 to November 2026 and as Head of Product at HitchPin from July 2021 to May 2025.
 
-I build and scale products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare. I write about what still matters in product when the job keeps getting rewritten — signal over noise, delivery over theater, operators who ship.
+At TRM Labs, he owned product strategy for financial institutions and regulators, worked directly with enterprise customers to prototype and ship products, and later led product for U.S. government missions focused on scams, sextortion, and cyber threats. He also built TeamRoom, a 16-agent product workspace that turned customer feedback into prioritized specs and tracked delivery.
+
+At HitchPin, he built and led a team of up to seven across product, engineering, and design. He helped expand an agricultural marketplace into SaaS and embedded payments, growing transaction volume 5× and revenue 4×. His prototype helped close the company’s first $1M enterprise deal.
+
+Earlier product roles included Alkami Technology, Populus Financial Group, and HMS. He writes about customer discovery, AI-assisted product development, and product leaders who build, sell, and ship.
+
+[Current résumé](https://bamcphail.github.io/Bryce-McPhail-Resume.pdf)
 
 ## Get in touch
 - Email: [mcphail.career@gmail.com](mailto:mcphail.career@gmail.com)

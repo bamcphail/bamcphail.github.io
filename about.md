@@ -1,8 +1,17 @@
 # About Bryce McPhail
 
-Bryce McPhail is a product leader with experience building and scaling products and teams across SaaS, fintech, crypto, dual use, banking, and healthcare. He writes long-form essays about how product management is changing in the AI era — what still matters, what is dying, and what great product managers actually do when the job description keeps getting rewritten.
+Bryce McPhail is a product leader based in Fort Worth, Texas, working across enterprise AI, fintech, and intelligence. He served as Senior Product Manager at TRM Labs from May 2025 to November 2026 and as Head of Product at HitchPin from July 2021 to May 2025.
 
-His work focuses on signal over noise, delivery over theater, and the hybrid operators who can move between product, go-to-market, and building without waiting for permission.
+At TRM Labs, he owned product strategy for financial institutions and regulators, worked directly with enterprise customers to prototype and ship products, and later led product for U.S. government missions focused on scams, sextortion, and cyber threats. He also built TeamRoom, a 16-agent product workspace that turned customer feedback into prioritized specs and tracked delivery.
+
+At HitchPin, he built and led a team of up to seven across product, engineering, and design. He helped expand an agricultural marketplace into SaaS and embedded payments, growing transaction volume 5× and revenue 4×. His prototype helped close the company’s first $1M enterprise deal.
+
+Earlier product roles included Alkami Technology, Populus Financial Group, and HMS. He writes about customer discovery, AI-assisted product development, and product leaders who build, sell, and ship.
+
+[Portfolio](https://bamcphail.github.io/) · [Current résumé](https://bamcphail.github.io/Bryce-McPhail-Resume.pdf)
+
+## Published work
+- [Building at the Speed of Thought: A Week with Claude Cowork](https://www.trmlabs.com/trm-tech-blog/building-at-the-speed-of-thought-a-week-with-claude-cowork) — published on the TRM Tech Blog, March 31, 2026.
 
 ## Essays
 - [Can You Cook?](https://bamcphail.github.io/can-you-cook.md) — what separates PMs who deliver from PMs who collect skills
