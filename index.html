@@ -118,7 +118,7 @@
     .carousel-slide blockquote { font: 400 clamp(1.375rem, 2.6vw, 2rem)/1.25 var(--display); }
     .carousel-slide figcaption, .recommendations-link { font-size: .875rem; }
     .carousel-slide figcaption { margin-top: .5rem; }
-    .carousel-slide.proof { font-family: var(--mono); color: var(--ink); font-size: clamp(1.5rem, 2.8vw, 2.125rem); font-weight: 700; }
+    .carousel-result { margin-top: 1rem; padding-top: .875rem; border-top: 1px solid var(--neutral); font-size: 1rem; }
     .landing { min-height: calc(100svh - var(--masthead-height, 0px)); }
     .carousel-dots { display: flex; flex-wrap: wrap; margin: .5rem 0 0 -.75rem; }
     .carousel-dots[hidden] { display: none; }
@@ -350,49 +350,48 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <section class="wrap recommendations" id="recommendations" aria-label="Recommendations and results">
           <div class="carousel-slides" id="carousel-slides">
-            <figure class="carousel-slide is-active">
-              <blockquote>“Bryce is the kind of product leader you hope to get on every team.”</blockquote>
-              <figcaption>— Thomas Armstrong, J.D., Head of Compliance Advisory</figcaption>
-            </figure>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“Bryce is incredibly talented at what he does.”</blockquote>
-              <figcaption>— Lisa Shiller, Data Scientist</figcaption>
-            </figure>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“Bryce is more than just a product expert, but also brings the intensity to take a product from idea to a real commercial outcome.”</blockquote>
-              <figcaption>— Seth, Product Manager</figcaption>
-            </figure>
-            <p class="carousel-slide proof" aria-hidden="true"><span class="proof-tag">HITCHPIN · 2021–2025</span>Grew revenue 4× and transaction volume 5×</p>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“He was instrumental in helping me get up to speed and turn ideas into practical solutions, often within a day or just a few days. What stood out most was his commitment to understanding the why behind what I wanted to build.”</blockquote>
-              <figcaption>— Kali Saylor, All-Source Investigations Manager</figcaption>
-            </figure>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“He's technical enough to earn engineers' respect, sharp enough with data to turn it into decisions, owns outcomes, and works incredibly hard.”</blockquote>
-              <figcaption>— Thomas Armstrong, J.D., Head of Compliance Advisory</figcaption>
-            </figure>
-            <p class="carousel-slide proof" aria-hidden="true"><span class="proof-tag">GOLDMAN SACHS HQ · ONSITE</span>Prototyped a new feature in a day, shipped the next week, while forward deployed with Goldman Sachs</p>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“This is a person who will run through walls to get to the outcome.”</blockquote>
-              <figcaption>— Jenny Gai, Lead Product Marketer</figcaption>
-            </figure>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“I was consistently impressed by his work ethic and the volume of work he was able to accomplish.”</blockquote>
-              <figcaption>— Nick Martin, Executive Account Director</figcaption>
-            </figure>
-            <p class="carousel-slide proof" aria-hidden="true"><span class="proof-tag">FINANCIAL INSTITUTIONS · Q1 2026</span>4.5× bookings growth, $6.1M closed in one quarter</p>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“As a leader, Bryce is a thoughtful player coach. He has cultivated deep trust and respect from his engineering teams by creating a culture of clear communication, learning together, and celebrating wins often.”</blockquote>
-              <figcaption>— Jenny Gai, Lead Product Marketer</figcaption>
-            </figure>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“I can't think of anyone I would rather be in the trenches with.”</blockquote>
-              <figcaption>— Thomas Armstrong, J.D., Head of Compliance Advisory</figcaption>
-            </figure>
-            <figure class="carousel-slide" aria-hidden="true">
-              <blockquote>“I couldn't recommend Bryce more strongly to any team looking for someone who learns quickly, drives change, and combines technical skill with a thoughtful, collaborative approach.”</blockquote>
-              <figcaption>— Kali Saylor, All-Source Investigations Manager</figcaption>
-            </figure>
+            <div class="carousel-slide is-active">
+              <figure>
+                <blockquote>“Bryce is the kind of product leader you hope to get on every team.”</blockquote>
+                <figcaption>Thomas Armstrong, J.D., Head of Compliance Advisory</figcaption>
+              </figure>
+              <p class="carousel-result">Result: Helped drive $6.1M in Q1 2026 closed-won FI bookings and 4.5× quarter-over-quarter FI growth.</p>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+              <figure>
+                <blockquote>“Mentor is the word I'd use, and I would 1,000% choose to work on any team Bryce is leading.”</blockquote>
+                <figcaption>Seth Yenni, Product Manager, Ag and Payments</figcaption>
+              </figure>
+              <p class="carousel-result">Result: Built and led a product, engineering, and design team that grew revenue 4× and transaction volume 5×.</p>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+              <figure>
+                <blockquote>“Bryce is a killer operator across product and GTM and an incredible builder… a person who will run through walls to get to the outcome.”</blockquote>
+                <figcaption>Jenny Gai, Product Marketing, TRM Labs</figcaption>
+              </figure>
+              <p class="carousel-result">Result: Founded a ~40-member FI Feedback Group with global banks, GSIBs, PayPal, and BlackRock.</p>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+              <figure>
+                <blockquote>“He keeps up with what's changing in the market and what competitors are doing, connects that to what he's hearing from customers, and has a point of view on where the company should go.”</blockquote>
+                <figcaption>Jacob McReynolds, Product, TRM Labs</figcaption>
+              </figure>
+              <p class="carousel-result">Result: Built Signal, which tracked customer conversations across calls, email, and Slack and replaced UserVoice, saving about $25K a year.</p>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+              <figure>
+                <blockquote>“He went beyond, embracing agentic software development, building bespoke solutions for clients after understanding their most pressing problems.”</blockquote>
+                <figcaption>Chris Hoffmeister, Senior Product Manager, Public Sector, TRM Labs</figcaption>
+              </figure>
+              <p class="carousel-result">Result: Shipped Teamroom, which cut a recurring PM task from 2–3 hours to under 2 minutes.</p>
+            </div>
+            <div class="carousel-slide" aria-hidden="true">
+              <figure>
+                <blockquote>“He was instrumental in helping me get up to speed and turn ideas into practical solutions, often within a day or just a few days.”</blockquote>
+                <figcaption>Kali Saylor, All-Source Investigations Manager, TRM Labs</figcaption>
+              </figure>
+              <p class="carousel-result">Result: Prototyped Entity Monitoring onsite at Goldman Sachs in one day and shipped it the next week.</p>
+            </div>
           </div>
           <div class="carousel-dots" role="group" aria-label="Choose a carousel slide" hidden></div>
           <a class="recommendations-link" href="https://www.linkedin.com/in/bryceam/">Read the full recommendations</a>
