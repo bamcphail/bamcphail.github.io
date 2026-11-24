@@ -118,7 +118,7 @@
     .recommendations-link { font-size: .875rem; }
     .carousel-slide figcaption, .carousel-result { font-size: clamp(1.125rem, 2vw, 1.375rem); }
     .carousel-slide figcaption { margin-top: .5rem; }
-    .carousel-result { margin-top: 1rem; padding-top: .875rem; border-top: 1px solid var(--neutral); }
+    .carousel-result { margin-top: 1rem; padding-top: .875rem; border-top: 1px solid var(--neutral); color: var(--green); }
     .landing { min-height: calc(100svh - var(--masthead-height, 0px)); }
     .carousel-dots { display: flex; flex-wrap: wrap; margin: .5rem 0 0 -.75rem; }
     .carousel-dots[hidden] { display: none; }
@@ -126,6 +126,18 @@
     .carousel-dots button::before { content: ""; width: .45rem; height: .45rem; border: 1px solid var(--ink); border-radius: 50%; }
     .carousel-dots button[aria-current="true"]::before { background: var(--ink); }
     .recommendations-link { display: inline-block; margin-top: .75rem; }
+    .recommendation-list { margin-top: 1.5rem; }
+    .recommendation-entry { border-top: 1px solid var(--neutral); }
+    .recommendation-entry:last-child { border-bottom: 1px solid var(--neutral); }
+    .recommendation-entry summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem 1rem; padding-block: 1.25rem; cursor: pointer; list-style: none; }
+    .recommendation-entry summary::-webkit-details-marker { display: none; }
+    .recommendation-entry summary::after { content: "+"; grid-column: 2; grid-row: 1 / 3; align-self: center; color: var(--green); font-size: 1.5rem; }
+    .recommendation-entry[open] summary::after { content: "−"; }
+    .recommendation-person { grid-column: 1; font-family: var(--display); font-size: clamp(1.25rem, 2.25vw, 1.65rem); }
+    .recommendation-role { grid-column: 1; font-size: 1rem; }
+    .recommendation-body { max-width: 52rem; padding-bottom: 1.75rem; }
+    .recommendation-meta { margin-bottom: 1rem; font-family: var(--mono); font-size: .8125rem; }
+    .recommendation-body blockquote p + p { margin-top: 1rem; }
     @media (prefers-reduced-motion: reduce) {
       .carousel-slide { transition: none; }
     }
@@ -330,6 +342,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <nav class="nav" aria-label="Main navigation">
           <a href="#work">Work</a>
           <a href="#writing">Writing</a>
+          <a href="#full-recommendations">Recommendations</a>
           <a href="#resume">Résumé</a>
           <a href="#next-step">Contact</a>
         </nav>
@@ -340,7 +353,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="landing">
         <section class="wrap hero" aria-labelledby="intro-title">
           <h1 id="intro-title">The modern product leader — pathfinder, designer, builder, closer</h1>
-          <p class="subline">I build products customers pay for, find the next opportunity, and turn it into closed revenue.</p>
+          <p class="subline">I build products customers will pay for, find the next opportunity, and turn it into closed revenue.</p>
           <div class="hero-actions">
             <a class="action" href="mailto:mcphail.career@gmail.com">Contact Bryce</a>
             <a class="action action-outline" href="Bryce-McPhail-Resume.pdf">Résumé</a>
@@ -393,7 +406,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
             </div>
           </div>
           <div class="carousel-dots" role="group" aria-label="Choose a carousel slide" hidden></div>
-          <a class="recommendations-link" href="https://www.linkedin.com/in/bryceam/">Read the full recommendations</a>
+          <a class="recommendations-link" href="#full-recommendations">Read the full recommendations</a>
         </section>
       </div>
 
@@ -467,9 +480,127 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </div>
       </section>
 
+      <section class="wrap work full-recommendations" id="full-recommendations" aria-labelledby="full-recommendations-title">
+        <h2 id="full-recommendations-title"><span class="section-label" aria-hidden="true">04 / RECOMMENDATIONS</span>Recommendations</h2>
+        <div class="recommendation-list">
+          <details class="recommendation-entry" open>
+            <summary>
+              <span class="recommendation-person">Chris Hoffmeister</span>
+              <span class="recommendation-role">Blockchain Forensics Expert | Federal Court-Qualified Expert Witness | Senior Product Manager, Public Sector at TRM Labs | Former HSI and CBP</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-24">November 24, 2026</time> · Worked with Bryce on the same team</p>
+              <blockquote>
+                <p>I can't convey enough the impact working alongside Bryce had on my career-change-within-a-career-change at TRM. I fell into a position as Product Manager after a career in investigations. I needed to learn from someone with deep experience. I watched Bryce pathfind, stand up, and lead a product team dedicated to finding the intersection of blockchain compliance and traditional finance. He's an astute questioner and listener - two of the most important qualities an all-star product person brings to the table. But he went beyond, embracing agentic software development, building bespoke solutions for clients after understanding their most pressing problems. He taught me that the most important flow to solve is the customer's "job to be done". I keep a cheat sheet of lessons from observing him excel on our team, and with every interaction at TRM, internal and external. He is also warm, empathetic, and understatedly funny. Any team would be lucky to welcome him to their world.</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Jacob McReynolds</span>
+              <span class="recommendation-role">Product @ TRM Labs</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-24">November 24, 2026</time> · Worked with Bryce on the same team</p>
+              <blockquote>
+                <p>Bryce is the kind of PM you want on your team. I saw it over and over working with him at TRM. If someone needs a hand, he jumps in. When something goes well, he makes sure the team gets the credit. He plays for the front of the jersey.</p>
+                <p>He’s really good with customers and prospects. On a discovery call, he’ll ask someone to walk through how they work today and pick up on things they mention in passing that turn out to be the real pain point. In a workshop, he gets people reacting to something concrete so everyone leaves knowing what’s worth trying next.</p>
+                <p>Bryce also has great business instincts. He keeps up with what’s changing in the market and what competitors are doing, connects that to what he’s hearing from customers, and has a point of view on where the company should go. I always wanted to hear his take when we were deciding what to bet on next.</p>
+                <p>I have a ton of respect for Bryce as a PM, and I’d love to work with him again!</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Lisa Shiller</span>
+              <span class="recommendation-role">Data Scientist</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-18">November 18, 2026</time> · Worked with Bryce on different teams</p>
+              <blockquote>
+                <p>Bryce is incredibly talented at what he does. I had the pleasure of working alongside him with some of the products I was building at TRM, and he helped guide me so that what I was building was the right thing. He also regularly presented at company-wide meetings and he is an excellent public speaker. He's also a pleasure to be around!</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Seth Yenni</span>
+              <span class="recommendation-role">Product Manager | Ag and Payments</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-16">November 16, 2026</time> · Reported directly to Bryce</p>
+              <blockquote>
+                <p>Bryce is more than just a product expert but also brings the intensity to take a product from idea to a real commercial outcome. He’s data driven in his decisions, following what customers and clients need. He is driven to see an idea through, but humble in how he puts the outcome for the team and the mission he’s serving over ego.</p>
+                <p>He understands that leadership is more than just a position. Through his leadership, he takes the time to care and find creative ways to empower the people he leads and serve his teammates.</p>
+                <p>Mentor is the word I'd use, and I would 1,000% choose to work on any team Bryce is leading.</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Nicholas Martin</span>
+              <span class="recommendation-role">Executive Account Director @ TRM Labs</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-16">November 16, 2026</time> · Worked with Bryce on different teams</p>
+              <blockquote>
+                <p>I had the opportunity to work with Bryce and was consistently impressed by his work ethic and the volume of work he was able to accomplish. He took on significant responsibility and delivered at a high level, even as priorities and demands shifted. His ability to adapt quickly and stay focused on results made him a valuable and reliable colleague.</p>
+                <p>Bryce is someone you can trust to take ownership of a task and see it through to completion. He approached every challenge with professionalism, and he was a pleasure to collaborate with.</p>
+                <p>Any organization would benefit from having Bryce on their team!</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Thomas Armstrong, J.D.</span>
+              <span class="recommendation-role">Head of Compliance Advisory</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-15">November 15, 2026</time> · Worked with Bryce on the same team</p>
+              <blockquote>
+                <p>Bryce is the kind of product leader you hope to get on every team. He knows how to put the customer first, work backwards from their ideal state and builds something the user will love. He doesn't just collect requests, he digs into the real problem, finds creative solutions, builds lasting relationships with both internal teams and customers, and then ensures that you also have a little fun along the way.</p>
+                <p>Bryce is also the glue between engineering, design, sales, and GTM, and honestly is talented enough that he could probably GM most os those teams. He's technical enough to earn engineers' respect, sharp enough with data to turn it into decisions, owns outcomes and works incredibly hard.</p>
+                <p>I can’t think of anyone I would rather be in the trenches with. Any company would be lucky to have him.</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Kali Saylor</span>
+              <span class="recommendation-role">All-Source Investigations Manager at TRM Labs</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-15">November 15, 2026</time> · Worked with Bryce on different teams</p>
+              <blockquote>
+                <p>Bryce made an immediate and lasting impact when we worked together. During my first six weeks, he was instrumental in helping me get up to speed and turn ideas into practical solutions—often within a day or just a few days.</p>
+                <p>One of his most valuable contributions was helping me build a centralized system for managing our team’s investigative leads. Bryce helped translate my vision into practical workflows and automation, improving visibility into workload and creating a lasting foundation for team coordination and success.</p>
+                <p>What stood out most was his commitment to understanding the “why” behind what I wanted to build. He asked thoughtful questions, welcomed feedback, and made time for live reviews so we could refine solutions together. Whenever I had an engineering question, he generously shared his knowledge or connected me with the right person.</p>
+                <p>Beyond our work together, Bryce helped organize engineering needs and prioritize builds across a new branch with multiple teams. He brought care, attention to detail, and follow-through to everything he did, while being an incredibly pleasant colleague.</p>
+                <p>I couldn’t recommend Bryce more strongly to any team looking for someone who learns quickly, drives change, and combines technical skill with a thoughtful, collaborative approach.</p>
+              </blockquote>
+            </div>
+          </details>
+          <details class="recommendation-entry">
+            <summary>
+              <span class="recommendation-person">Jenny Gai</span>
+              <span class="recommendation-role">Product Marketing @TRM | Expert cat-herder | Ex-Salesforce | Passionate about the intersection of climate and technology</span>
+            </summary>
+            <div class="recommendation-body">
+              <p class="recommendation-meta"><time datetime="2026-11-15">November 15, 2026</time> · Worked with Bryce on different teams</p>
+              <blockquote>
+                <p>Bryce is a killer operator across product and GTM and an incredible builder.</p>
+                <p>When I interviewed Bryce for the role at TRM, I thought, this is a person who will run through walls to get to the outcome. He’s demonstrated that time and time again. He created a feedback group that our customers are excited to join and has built incredible trust with our customers through deep listening, rapid prototyping and product delivery.</p>
+                <p>As a leader, Bryce is a thoughtful player-coach. He has cultivated deep trust and respect from his engineering teams by creating a culture of clear communication, learning together, and celebrating wins often.</p>
+              </blockquote>
+            </div>
+          </details>
+        </div>
+        <a class="section-link" href="https://www.linkedin.com/in/bryceam/details/recommendations/">View on LinkedIn</a>
+      </section>
+
       <section class="wrap folio" id="resume" aria-labelledby="resume-title">
         <div class="resume-header">
-        <p class="section-label" aria-hidden="true">04 / RECORD</p>
+        <p class="section-label" aria-hidden="true">05 / RECORD</p>
         <details class="resume-disclosure">
           <summary><h2 id="resume-title">Résumé</h2></summary>
           <div class="entries resume-content">
@@ -555,7 +686,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </div>
       </section>
       <section class="wrap folio next-step" id="next-step" aria-labelledby="next-step-title">
-        <h2 id="next-step-title"><span class="section-label" aria-hidden="true">05 / CONTACT</span>Contact</h2>
+        <h2 id="next-step-title"><span class="section-label" aria-hidden="true">06 / CONTACT</span>Contact</h2>
         <div>
           <p>Building something where product has to win revenue? Let's talk.</p>
           <div class="brief">
